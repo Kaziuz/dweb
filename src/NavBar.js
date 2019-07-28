@@ -1,41 +1,49 @@
-import React from 'react'
+import React, { Fragment, useState } from 'react'
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
 
 function NavBar () {
+    const [collapsed, setCollapsed] = useState(true)
+    
+    const toggleNavbar = () => setCollapsed(!collapsed)
+
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="#">
-                    <img src="https://png.pngtree.com/element_pic/16/05/30/11574bb301599cc.jpg" alt="" className="mr-3"/>
-                </a>
-                <button 
-                    className="navbar-toggler" 
-                    type="button" 
-                    data-toggle="collapse" 
-                    data-target="#navbarNav" 
-                    aria-controls="navbarNav" 
-                    aria-expanded="false" 
-                    aria-label="Toggle navigation"
+       <Fragment>
+        <Navbar color="faded" className="root-color fixed-top">
+          <NavbarBrand 
+            href="/" 
+            className="mr-auto"
+          >
+            <img 
+              src="https://png.pngtree.com/element_pic/16/05/30/11574bb301599cc.jpg"
+              width="90px" 
+              alt="" 
+              className="mr-3"
+            />
+          </NavbarBrand>
+
+          <NavbarToggler 
+            onClick={toggleNavbar} 
+            className="mr-2" 
+          >
+            <span>&#9776;</span>
+          </NavbarToggler>
+
+          <Collapse isOpen={!collapsed} navbar>
+            <Nav navbar>
+              <NavItem>
+                {/* <NavLink href="/components/">Components</NavLink>*/}
+              </NavItem>
+              <NavItem>
+                <NavLink 
+                    href="https://github.com/reactstrap/reactstrap"
                 >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Features</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+                    GitHub
+                </NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </Fragment>
     )
 }
 

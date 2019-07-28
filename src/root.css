@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+body {
+    background:#dbdcde !important;
+    font-family: 'Poppins', 'sans-serif';
+    font-weight: 600;
+    color:black;
+}
+
+.root-color {
+    background:#dbdcde !important;
+}
+
+.titulos-pricipales {
+    font-size: 15rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -13px;
+    text-transform: none;
+}
+
+.subtitulos {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -3px;
+    text-transform: none;
+}
+
+p {
+    font-size: 13px;
+    line-height: 27px;
+    font-style: normal;
+    font-weight: 600;
+}

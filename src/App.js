@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import { Container, Row } from 'reactstrap'
 
 import NavBar from './NavBar'
+import Portafolio from './Portafolio/Portafolio'
 
 function App() {
   return (
@@ -47,8 +48,7 @@ function App() {
         <Row>
           <div className="col-lg-12 mt-4">
             <h2 className="titulos-pricipales text-left">Projects</h2>
-            <p>Subtitulo o descripción</p>
-            <div> aqui iria galeria desponsive con flex </div>
+            <Portafolio />
           </div>
         </Row>
 

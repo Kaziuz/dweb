@@ -1,4 +1,7 @@
 import React, { Fragment, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faGithub } from '@fortawesome/free-solid-svg-icons'
+
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
 
 function NavBar () {
@@ -25,7 +28,10 @@ function NavBar () {
           onClick={toggleNavbar}
           className="mr-2"
         >
-          <span style={{ outline: 'none' }}>&#9776;</span>
+          {/* <span style={{ outline: 'none' }}>&#9776;</span> */}
+          {/* <span className="oi oi-menu" title="icon name" aria-hidden="true"></span> */}
+          <FontAwesomeIcon icon={faBars} />
+          <i className="fa fa-github" aria-hidden="true"></i>
         </NavbarToggler>
 
         <Collapse isOpen={!collapsed} navbar>

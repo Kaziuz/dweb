@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
+/* Globals */
+span:focus{
+    outline: 0;
+}
+
 body {
     background:#dbdcde !important;
     font-family: 'Poppins', 'sans-serif';

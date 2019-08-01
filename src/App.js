@@ -1,15 +1,57 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 
 import { Container, Row } from 'reactstrap'
 
 import NavBar from './NavBar'
 import Portafolio from './Portafolio/Portafolio'
+import Bienvenida from './Bienvenida/Bienvenida'
 
-function App() {
+import img1 from './Portafolio/img1.jpg'
+import img2 from './Portafolio/img2.jpg'
+import img3 from './Portafolio/img3.jpg'
+import img4 from './Portafolio/img4.jpg'
+import img5 from './Portafolio/img5.jpg'
+import img6 from './Portafolio/img6.jpg'
+import img7 from './Portafolio/img7.jpg'
+
+function App () {
+  const images = [
+    {
+      url: img1,
+      description: 'nothing',
+    },
+    {
+      url: img2,
+      description: 'nothing',
+    },
+    {
+      url: img3,
+      description: 'nothing',
+    },
+    {
+      url: img4,
+      description: 'nothing',
+    },
+    {
+      url: img5,
+      description: 'nothing',
+    },
+    {
+      url: img6,
+      description: 'nothing',
+    },
+    {
+      url: img7,
+      description: 'nothing',
+    },
+  ]
+
+  const [img, setImg] = useState(images)
+
   return (
     <Fragment>
       <NavBar />
-      <Container style={{ marginTop: 120, background: "rgba(219, 220, 222, 1)" }}>
+      <Container style={{ marginTop: 120, background: 'rgba(219, 220, 222, 1)' }}>
         <Row>
 
           <div className="col-lg-12 d-flex justify-content-around my-2">
@@ -22,37 +64,15 @@ function App() {
             <h2 className="titulos-pricipales">dweb</h2>
           </div>
 
-          <div className="col-lg-4 my-4">
-            <h6 className="subtitulos">Sub titulo</h6>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et placeat veritatis tempora
-              quisquam consequuntur! Ab officia exercitationem,
-              doloribus non dolor cumque laboriosam, quibusdam consectetur odio explicabo, obcaecati a officiis aperiam?
-          </p>
-          </div>
-          <div className="col-lg-4 my-4">
-            <h6 className="subtitulos">Sub titulo</h6>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et placeat veritatis tempora
-              quisquam consequuntur! Ab officia exercitationem,
-              doloribus non dolor cumque laboriosam, quibusdam consectetur odio explicabo, obcaecati a officiis aperiam?
-          </p>
-          </div>
-          <div className="col-lg-4 my-4">
-            <h6 className="subtitulos">Sub titulo</h6>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et placeat veritatis tempora
-              quisquam consequuntur! Ab officia exercitationem,
-              doloribus non dolor cumque laboriosam, quibusdam consectetur odio explicabo, obcaecati a officiis aperiam?
-          </p>
-          </div>
+          <Bienvenida />
         </Row>
 
         <Row>
           <div className="col-lg-12 mt-4">
             <h2 className="titulos-pricipales text-left">Projects</h2>
-            <Portafolio />
+            <Portafolio images={img}/>
           </div>
         </Row>
-
-
 
         <div className="row">
 
@@ -61,7 +81,7 @@ function App() {
             <p>Subtitulo o descripción</p>
           </div>
           <div className="col-lg-6 d-flex justify-content-lg-center">
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card" style={{ width: '18rem' }}>
               <img src="https://thispersondoesnotexist.com/image" className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>
@@ -72,7 +92,7 @@ function App() {
             </div>
           </div>
           <div className="col-lg-6 d-flex justify-content-lg-center">
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card" style={{ width: '18rem' }}>
               <img src="https://thispersondoesnotexist.com/image" className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>

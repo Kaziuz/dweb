@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ImageCard from './ImageCard'
-import './ImageList.css'
 
-function Portafolio ({ images }) {
+function Galeria ({ images }) {
   const imagenes = images.map((img, idx) => {
     return <ImageCard key={idx} imagen={img} />
   })
@@ -15,8 +14,8 @@ function Portafolio ({ images }) {
   )
 }
 
-Portafolio.propTypes = {
+Galeria.propTypes = {
   images: PropTypes.array,
 }
 
-export default Portafolio
+export default Galeria

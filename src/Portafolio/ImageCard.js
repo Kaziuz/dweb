@@ -1,42 +1,37 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
+import PropTypes from 'prop-types'
 
-// este componente renderea la imagen, con un ref
-// accedemos al dom para saber su alto y asi
-// dinamicamente agregar span en css para darle su espaciado correspondiente
-class ImageCard extends React.Component {
-  constructor (props) {
-    super(props)
-    this.imageRef = React.createRef()
-    this.state = {
-      espacios: 0,
-    }
+function ImageCard (props) {
+  const [espacios, setEspacios] = useState(0)
+  const imageRef = useRef()
+
+  useEffect(() => {
+    imageRef.current.addEventListener('load', setSpans())
+  }, [])
+
+  const setSpans = () => {
+    const altura = imageRef.current.clientHeight
+    const espacios = Math.ceil(altura / 10) // grid-auto-rows: 12px
+    setEspacios(espacios)
   }
 
-  componentDidMount () {
-    // añadimos un evento para que nos diga cuando la imagen esta en el dom
-    this.imageRef.current.addEventListener('load', this.setSpans)
-  }
+  const { imagen: { description, url } } = props
 
-    // fijamos los espacios segun lo necesite la imagen por su altura
-    setSpans = () => {
-      const altura = this.imageRef.current.clientHeight
-      // el 150 viene de la clase grid-auto-rows: 10px;
-      const espacios = Math.ceil(altura / 10)
-      this.setState({ espacios })
-    }
+  return (
+    <div style={{ gridRowEnd: `span ${espacios}` }}>
+      <img
+        ref={imageRef}
+        alt={description}
+        src={url}
+      />
+    </div>
+  )
+}
 
-    render () {
-      const { description, url } = this.props.imagen
-      return (
-        <div style={{ gridRowEnd: `span ${this.state.espacios}` }}>
-          <img
-            ref={this.imageRef}
-            alt={description}
-            src={url}
-          />
-        </div>
-      )
-    }
+ImageCard.propTypes = {
+  imagen: PropTypes.object,
+  description: PropTypes.string,
+  url: PropTypes.string,
 }
 
 export default ImageCard

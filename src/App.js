@@ -15,7 +15,7 @@ import img6 from './Portafolio/img6.jpg'
 import img7 from './Portafolio/img7.jpg'
 
 function App () {
-  const images = [
+  const dummyImages = [
     {
       url: img1,
       description: 'nothing',
@@ -46,7 +46,7 @@ function App () {
     },
   ]
 
-  const [img, setImg] = useState(images)
+  const [img, setImg] = useState(dummyImages)
 
   return (
     <Fragment>

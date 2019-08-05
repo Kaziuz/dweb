@@ -1,5 +1,7 @@
 import React from 'react'
 import { Row } from 'reactstrap'
+import facebook from './facebook.svg'
+import personal from './personal.svg'
 
 export default function Equipo () {
   return (
@@ -19,6 +21,10 @@ export default function Equipo () {
             quisquam consequuntur! Ab officia exercitationem,
            doloribus non dolor cumque laboriosam, quibusdam consectetur odio explicabo, obcaecati a officiis aperiam?
           </p>
+          <div className="d-flex justify-content-start">
+            <a href="#"><img className="redes-icon" src={facebook} /></a>
+            <a href="#"><img className="redes-icon" src={personal} /></a>
+          </div>
         </div>
 
         <div>
@@ -29,8 +35,11 @@ export default function Equipo () {
             quisquam consequuntur! Ab officia exercitationem,
            doloribus non dolor cumque laboriosam, quibusdam consectetur odio explicabo, obcaecati a officiis aperiam?
           </p>
+          <div className="d-flex justify-content-start">
+            <img className="redes-icon" src={facebook} width="80px" />
+            <img className="redes-icon" src={personal} width="60px" />
+          </div>
         </div>
-
       </div>
     </Row>
   )

@@ -5,6 +5,10 @@ span:focus{
     outline: 0;
 }
 
+button:focus{
+    outline:0 !important;
+}
+
 body {
     background:#dbdcde !important;
     font-family: 'Poppins', 'sans-serif';
@@ -52,4 +56,23 @@ p {
 
 .wrapGaleria{
     margin-top: 80px;
+}
+
+.redes-icon {
+    background: black;
+    max-width: 50px;
+    max-height: 50px;
+    padding: 5px;
+    margin:1px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.redes-icon:hover {
+    background: rgb(239, 185, 25);
+    max-width: 50px;
+    max-height: 50px;
+    padding: 5px;
+    margin:1px;
+    transition: .5s;
 }

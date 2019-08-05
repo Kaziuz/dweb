@@ -29,9 +29,8 @@ function NavBar () {
           className="mr-2"
         >
           {/* <span style={{ outline: 'none' }}>&#9776;</span> */}
-          {/* <span className="oi oi-menu" title="icon name" aria-hidden="true"></span> */}
+          <i className="fa fa-bars"></i>
           <FontAwesomeIcon icon={faBars} />
-          <i className="fa fa-github" aria-hidden="true"></i>
         </NavbarToggler>
 
         <Collapse isOpen={!collapsed} navbar>
@@ -43,7 +42,7 @@ function NavBar () {
               <NavLink
                 href="https://github.com/reactstrap/reactstrap"
               >
-                    GitHub
+                GitHub
               </NavLink>
             </NavItem>
           </Nav>

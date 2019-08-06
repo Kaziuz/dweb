@@ -1,8 +1,8 @@
 import React, { Fragment, useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faGithub } from '@fortawesome/free-solid-svg-icons'
+import { IoIosMenu } from 'react-icons/io'
 
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
+import dwebblack from './img/dwebblack.png'
 
 function NavBar () {
   const [collapsed, setCollapsed] = useState(true)
@@ -11,13 +11,13 @@ function NavBar () {
 
   return (
     <Fragment>
-      <Navbar color="faded" className="root-color fixed-top">
+      <Navbar color="faded" className="root-color fixed-top" style={{boxShadow: '0 1px 3px rgba(0,0,0,.11)'}}>
         <NavbarBrand
           href="/"
           className="mr-auto"
         >
           <img
-            src="https://png.pngtree.com/element_pic/16/05/30/11574bb301599cc.jpg"
+            src={dwebblack}
             width="90px"
             alt=""
             className="mr-3"
@@ -28,9 +28,7 @@ function NavBar () {
           onClick={toggleNavbar}
           className="mr-2"
         >
-          {/* <span style={{ outline: 'none' }}>&#9776;</span> */}
-          <i className="fa fa-bars"></i>
-          <FontAwesomeIcon icon={faBars} />
+          <IoIosMenu className="" size="2em"/>
         </NavbarToggler>
 
         <Collapse isOpen={!collapsed} navbar>

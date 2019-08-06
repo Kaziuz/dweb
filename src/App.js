@@ -56,12 +56,11 @@ function App () {
       <Container style={{ marginTop: 120, background: 'rgba(219, 220, 222, 1)' }}>
         <Row>
           <div className="col-lg-12 d-flex justify-content-around my-2">
-            <span style={{ color: 'yellow', fontSize: 150 }}>&#9650;</span>
-            <span style={{ color: '#3f60ad', fontSize: 150 }}>&#9732;</span>
-            <span style={{ color: 'red', fontSize: 150 }}>&#9914;</span>
+            <span style={{ color: 'rgb(250, 193, 26)', fontSize: 150 }}>&#9650;</span>
+            <span style={{ color: 'rgb(232, 37, 45)', fontSize: 150 }}>&#9914;</span>
           </div>
           <div className="col-lg-12 my-2">
-            <h2 className="titulos-pricipales">dweb</h2>
+            <h1 className="text-center">DESIGN INTERACTION WEB STUDIO </h1>
           </div>
           <Bienvenida />
         </Row>

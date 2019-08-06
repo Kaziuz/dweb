@@ -1,25 +1,29 @@
 import React, { Fragment, useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faGithub } from '@fortawesome/free-solid-svg-icons'
 
 import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
+
+import dwebwhite from './img/dwebwhite.png'
 
 function Footer () {
   return (
     <Fragment>
-      <Navbar color="faded" className="bg-dark mt-4">
+      <Navbar color="faded" className="bg-dark mt-4 d-flex justify-content-around">
         <NavbarBrand
           href="/"
-          className="mr-auto"
         >
           <img
-            src="https://png.pngtree.com/element_pic/16/05/30/11574bb301599cc.jpg"
+            src={dwebwhite}
             width="90px"
             alt=""
             className="mr-3"
           />
-        </NavbarBrand>  
+        </NavbarBrand>
 
+        <span className="" style={{ color: 'white' }}>© Copyright DWEB Medellín - Colombia</span>
+
+        <div className="" style={{ color: 'white' }}>
+          Redes sociales del sitio aqui
+        </div>
       </Navbar>
     </Fragment>
   )

@@ -60,8 +60,7 @@ p {
 
 .redes-icon {
     background: black;
-    max-width: 50px;
-    max-height: 50px;
+    color:white;
     padding: 5px;
     margin:1px;
     transition: .5s;
@@ -70,8 +69,7 @@ p {
 
 .redes-icon:hover {
     background: rgb(239, 185, 25);
-    max-width: 50px;
-    max-height: 50px;
+    color:white;
     padding: 5px;
     margin:1px;
     transition: .5s;

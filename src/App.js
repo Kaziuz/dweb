@@ -17,6 +17,7 @@ import img6 from './Galeria/img6.jpg'
 import img7 from './Galeria/img7.jpg'
 
 function App () {
+
   const dummyImages = [
     {
       url: img1,

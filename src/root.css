@@ -21,7 +21,7 @@ body {
 }
 
 .titulos-pricipales {
-    font-size: 15rem;
+    font-size: 10rem;
     text-align: center;
     font-weight: 700;
     letter-spacing: -13px;
@@ -54,6 +54,44 @@ p {
     width:250px;
 }
 
+.wrap-img-gallery {
+    position: relative;
+    width: calc(100% - 18px);
+}
+
+.img-galery {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.more-info {
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    height: 100%;
+    width:100%;
+    opacity:0;
+    transition: .5s ease;
+    background: black;
+}
+
+.wrap-img-gallery:hover .more-info {
+    opacity: .9;
+}
+
+.more-info a{
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
 .wrapGaleria{
     margin-top: 80px;
 }
@@ -67,7 +105,17 @@ p {
     cursor: pointer;
 }
 
-.redes-icon:hover {
+.redes-icon-footer {
+    background: rgb(255, 255, 255);
+    color:black;
+    padding: 5px;
+    margin:1px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.redes-icon:hover,
+.redes-icon-footer:hover {
     background: rgb(239, 185, 25);
     color:white;
     padding: 5px;

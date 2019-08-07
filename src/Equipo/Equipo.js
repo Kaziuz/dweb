@@ -21,8 +21,8 @@ export default function Equipo () {
            doloribus non dolor cumque laboriosam, quibusdam consectetur odio explicabo, obcaecati a officiis aperiam?
           </p>
           <div className="d-flex justify-content-start">
-            <a href="#"><IoLogoFacebook className="redes-icon" size="2em"/></a>
-            <a href="#"><IoIosPerson className="redes-icon" size="2em"/></a>
+            <a href="#"><IoLogoFacebook className="redes-icon" size="3em"/></a>
+            <a href="#"><IoIosPerson className="redes-icon" size="3em"/></a>
           </div>
         </div>
 
@@ -35,8 +35,8 @@ export default function Equipo () {
            doloribus non dolor cumque laboriosam, quibusdam consectetur odio explicabo, obcaecati a officiis aperiam?
           </p>
           <div className="d-flex justify-content-start">
-          <a href="#"><IoLogoFacebook className="redes-icon" size="2em"/></a>
-            <a href="#"><IoIosPerson className="redes-icon" size="2em"/></a>
+            <a href="#"><IoLogoFacebook className="redes-icon" size="3em"/></a>
+            <a href="#"><IoIosPerson className="redes-icon" size="3em"/></a>
           </div>
         </div>
       </div>

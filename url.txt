@@ -1,3 +1,10 @@
 https://bridge34.qodeinteractive.com/
 https://www.lameratienda.com/gendyalnatural/
 para las animaciones https://medium.com/@correo.oke/scroll-con-react-5cb11eb09a2a
+
+TODO:
+
+1. Al final que vamos a mostrar en la web
+2. Implementar la animación del menu
+3. implementar el responsive 
+4. alimentacion de datos con tabletop (google)

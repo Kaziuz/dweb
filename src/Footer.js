@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react'
 
+import { IoLogoFacebook, IoIosPerson } from 'react-icons/io'
 import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
 
 import dwebwhite from './img/dwebwhite.png'
@@ -20,9 +21,11 @@ function Footer () {
         </NavbarBrand>
 
         <span className="" style={{ color: 'white' }}>© Copyright DWEB Medellín - Colombia</span>
-
         <div className="" style={{ color: 'white' }}>
-          Redes sociales del sitio aqui
+        <div className="d-flex justify-content-start">
+            <a href="#"><IoLogoFacebook className="redes-icon-footer" size="3em"/></a>
+            <a href="#"><IoIosPerson className="redes-icon-footer" size="3em"/></a>
+          </div>
         </div>
       </Navbar>
     </Fragment>

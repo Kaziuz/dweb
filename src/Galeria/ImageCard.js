@@ -11,7 +11,7 @@ function ImageCard (props) {
 
   const setSpans = () => {
     const altura = imageRef.current.clientHeight
-    const espacios = Math.ceil(altura / 10) // grid-auto-rows: 12px
+    const espacios = Math.ceil(altura / 10)
     setEspacios(espacios)
   }
 
@@ -19,11 +19,17 @@ function ImageCard (props) {
 
   return (
     <div style={{ gridRowEnd: `span ${espacios}` }}>
-      <img
-        ref={imageRef}
-        alt={description}
-        src={url}
-      />
+      <div className="wrap-img-gallery">
+        <img
+          ref={imageRef}
+          alt={description}
+          src={url}
+          className="img-galery"
+        />
+        <div className="more-info">
+          <a href="#">Link hacia la web </a>
+        </div>
+      </div>
     </div>
   )
 }

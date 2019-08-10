@@ -7,6 +7,7 @@ import Bienvenida from './Bienvenida/Bienvenida'
 import Galeria from './Galeria/Galeria'
 import Equipo from './Equipo/Equipo'
 import Footer from './Footer'
+import Contacto from './Contacto'
 
 import img1 from './Galeria/img1.jpg'
 import img2 from './Galeria/img2.jpg'
@@ -74,6 +75,8 @@ function App () {
         </Row>
 
         <Equipo />
+
+        <Contacto />
 
       </Container>
 

@@ -50,37 +50,35 @@ function App () {
     },
   ]
 
-  const [img, setImg] = useState(dummyImages)
+  const [img] = useState(dummyImages)
 
   return (
     <Fragment>
       <NavBar />
       <Container style={{ marginTop: 120, background: 'rgba(219, 220, 222, 1)' }}>
         <Row>
-          <div className="col-lg-12 d-flex justify-content-around my-2">
-            <span style={{ color: 'rgb(250, 193, 26)', fontSize: 150 }}>&#9650;</span>
-            <span style={{ color: 'rgb(232, 37, 45)', fontSize: 150 }}>&#9914;</span>
-          </div>
-          <div className="col-lg-12 my-2">
-            <h1 className="text-center">DESIGN INTERACTION WEB STUDIO </h1>
-          </div>
           <Bienvenida />
         </Row>
 
         <Row>
-          <div className="col-lg-12 mt-4">
-            <h2 className="titulos-pricipales text-left">Projects</h2>
+          <div className="col-lg-12">
+            <h2 className="titulos-pricipales text-left mt-4">Projects</h2>
             <Galeria images={img}/>
           </div>
         </Row>
 
-        <Equipo />
+        <Row>
+          <Equipo />
+        </Row>
 
-        <Contacto />
+        <Row>
+          <Contacto />
+        </Row>
 
       </Container>
 
       <Footer />
+
     </Fragment>
   )
 }

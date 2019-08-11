@@ -22,11 +22,20 @@ body {
 
 .titulos-pricipales {
     font-size: 10rem;
-    text-align: center;
     font-weight: 700;
     letter-spacing: -13px;
     text-transform: none;
 }
+
+@media only screen and (max-width: 576px) {
+    .titulos-pricipales {
+        font-size: 4rem;
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: -5px;
+        text-transform: none;
+    }
+  }
 
 .subtitulos {
     font-size: 2rem;
@@ -56,7 +65,7 @@ p {
 
 .wrap-img-gallery {
     position: relative;
-    width: calc(100% - 18px);
+    width: calc(98% - 18px);
 }
 
 .img-galery {
@@ -137,4 +146,12 @@ p {
     background-clip: padding-box;
     border: 1px solid #495057;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.bottom-send {
+    font-weight: bold;
+    color: white;
+    background: black;
+    border-radius: 0;
+    border: 1px solid transparent;
 }

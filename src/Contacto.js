@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 function Contacto () {
   return (
-    <div className="row">
-      <div className="col-lg-12 my-2">
+    <Fragment>
+      <div className="col-lg-12">
         <h2 className="titulos-pricipales text-left">Contacto</h2>
         <p className="text-left w-responsive mx-auto mb-5">
-          Usted tiene alguna idea, tienda web o proyecto que quiere construir? 
+          Usted tiene alguna idea, tienda web o proyecto que quiere construir?
           Por favor sientase en la libertad de escribirnos y exponernos su idea.
           En la brevedad estaremos en contacto con usted</p>
+
         <div className="row">
           <div className="col-md-9 mb-md-0 mb-5">
             <form id="contact-form" name="contact-form">
@@ -43,8 +44,8 @@ function Contacto () {
                 </div>
               </div>
             </form>
-            <div className="text-center text-md-left">
-              <button className="btn btn-primary" onClick={console.log('ewnviar')}>Enviar</button>
+            <div className="text-md-left mt-2">
+              <button className="btn bottom-send" onClick={console.log('ewnviar')}>Enviar</button>
             </div>
             <div className="status"></div>
           </div>
@@ -67,7 +68,7 @@ function Contacto () {
 
         </div>
       </div>
-    </div>
+    </Fragment>
 
   )
 }

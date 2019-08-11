@@ -27,7 +27,7 @@ function ImageCard (props) {
           className="img-galery"
         />
         <div className="more-info">
-          <a href="#">Link hacia la web </a>
+          <a href="http://www.facebook.com">Link hacia la web </a>
         </div>
       </div>
     </div>

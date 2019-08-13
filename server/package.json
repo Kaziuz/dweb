@@ -1,0 +1,21 @@
+{
+  "name": "server-dweb",
+  "version": "1.0.0",
+  "description": "server for send emails",
+  "main": "server.js",
+  "scripts":{
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "dweb",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "nodemailer": "^6.3.0",
+    "restify": "^8.4.0",
+    "restify-cors-middleware": "^1.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}

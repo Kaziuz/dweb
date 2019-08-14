@@ -55,14 +55,15 @@ function App () {
   return (
     <Fragment>
       <NavBar />
-      <Container style={{ marginTop: 120, background: 'rgba(219, 220, 222, 1)' }}>
+
+      <Container style={{ background: 'rgba(219, 220, 222, 1)' }}>
         <Row>
           <Bienvenida />
         </Row>
 
         <Row>
           <div className="col-lg-12">
-            <h2 className="titulos-pricipales text-left mt-4">Projects</h2>
+            <h2 className="titulos-pricipales text-left mt-4">Proyectos</h2>
             <Galeria images={img}/>
           </div>
         </Row>

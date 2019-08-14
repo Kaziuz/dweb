@@ -6,7 +6,7 @@ function Contacto () {
   const [nombre, setNombreUsuario] = useState('Tu nombre')
   const [asunto, setAsunto] = useState('Asunto')
   const [mensaje, setMensaje] = useState('Mensaje')
-
+  const [showModal, setShowModal] = useState(false)
   const validEmail = isValidEmail(Email)
 
   function isValidEmail (mail) {
@@ -18,7 +18,7 @@ function Contacto () {
     e.preventDefault()
 
     if (Boolean(validEmail) === false) {
-      alert('su correo esta mal o faltan datos') // mejorar este alert
+      window.alert('su correo esta mal o faltan datos') // mejorar este alert
     } else {
       const datos = {
         nombre,
@@ -26,22 +26,23 @@ function Contacto () {
         asunto,
         mensaje,
       }
-
-      // example with axios
       axios({
         method: 'POST',
         url: 'http://localhost:3032/send',
         data: datos,
       }).then(response => {
-        console.log('response server', response)
-
-        if (response.data.msg === 'success') {
-          alert('Mensaje enviado con exito')
-          // cuando se envien formularios no olvidar el reset de ellos, limpiar los campos
+        // console.log('response server', response)
+        if (response.status === 201) {
+          setEmail('')
+          setNombreUsuario('Tu nombre')
+          setAsunto('Asunto')
+          setMensaje('Mensaje')
+          setShowModal(false)
+          window.alert('mensaje enviado exitomente')
         }
       }).catch(err => {
         console.log(err.response)
-        alert('Message failed to send.')
+        window.alert('Message failed to send.')
       })
     }
   }
@@ -53,8 +54,8 @@ function Contacto () {
         <p className="text-left w-responsive mx-auto mb-5">
           Usted tiene alguna idea, tienda web o proyecto que quiere construir?
           Por favor sientase en la libertad de escribirnos y exponernos su idea.
-          En la brevedad estaremos en contacto con usted</p>
-
+          En la brevedad estaremos en contacto con usted
+        </p>
         <div className="row">
           <div className="col-md-9 mb-md-0 mb-5">
             <form id="contact-form" name="contact-form" onSubmit={sendEmail}>
@@ -118,6 +119,7 @@ function Contacto () {
               </div>
               <div className="text-md-left mt-2">
                 <button className="btn bottom-send" type="submit">Enviar</button>
+                {showModal && <div> Correo enviado con exito </div>}
               </div>
             </form>
             <div className="status"></div>
@@ -128,11 +130,9 @@ function Contacto () {
               <li><i className="fas fa-map-marker-alt fa-2x"></i>
                 <p>Medellín, Antioquia - Colombia</p>
               </li>
-
               <li><i className="fas fa-phone mt-4 fa-2x"></i>
                 <p>+ 300 218 56 57</p>
               </li>
-
               <li><i className="fas fa-envelope mt-4 fa-2x"></i>
                 <p>info@deweb.com</p>
               </li>

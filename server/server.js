@@ -1,14 +1,13 @@
-var nodemailer = require('nodemailer')
-var config = require('./config')
-var restify = require('restify')
-var bodyParser = require('body-parser')
-var corsMiddleware = require('restify-cors-middleware')
-
+const nodemailer = require('nodemailer')
+const config = require('./config')
+const restify = require('restify')
+const bodyParser = require('body-parser')
+const corsMiddleware = require('restify-cors-middleware')
 
 const port = process.env.PORT || 3032
 
 // Middleware CORS
-var cors = corsMiddleware({
+const cors = corsMiddleware({
   preflightMaxAge: 5,
   origins: ['*'],
   allowHeaders: ['API-Token'],
@@ -16,8 +15,7 @@ var cors = corsMiddleware({
 })
 
 // init server
-
-var server = restify.createServer()
+const server = restify.createServer()
 
 // handle cross origin problem
 server.pre(cors.preflight)
@@ -33,10 +31,11 @@ server.use(restify.plugins.bodyParser({
 }))
 
 server.use(restify.plugins.fullResponse())
+
 // setup email config
 // para poder recibir correos de cuentas no segurs en gmail
 // https://myaccount.google.com/lesssecureapps
-var smtpTransport = nodemailer.createTransport({
+const smtpTransport = nodemailer.createTransport({
   service: 'Gmail',
   auth: {
     user: config.USER,
@@ -44,13 +43,20 @@ var smtpTransport = nodemailer.createTransport({
   }
 })
 
-// enviamos correo mediante POST con nodemailer
+// send email POST with nodemailer
 server.post('/send', function create(req, res, next) {
   let email = {
     from: req.params.email,
     to: 'johnnysepulveda988@gmail.com',
     subject: req.params.asunto,
-    html: `<b>name</b>: ${req.params.nombre}<br/><b>Message:</b>${req.params.mensaje}<br/><b>Email:</b>${req.params.email}`
+    html: `<div>
+      <h1>Nombre de quien envía:<b>${req.params.nombre}</b></h1><br/>
+      <p>
+      <b>El asunto del mensaje es:</b>${req.params.asunto}<br/>
+      <b>El mensaje es :</b>${req.params.mensaje}<br/>
+      <b>Email de ${req.params.nombre} es:</b>${req.params.email}
+      </div> 
+    `
   }
   
   smtpTransport.sendMail(email, (err, response) => {
@@ -63,10 +69,10 @@ server.post('/send', function create(req, res, next) {
     smtpTransport.close()
   })
   res.send(201, req.params)
-
+  next()
 })
 
-// un endpoint de prueba
+// test endPoint
 server.get('/', (req, res, next) => {
   res.send({ saludo: 'El server esta ready .!.' })
   next()

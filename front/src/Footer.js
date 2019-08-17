@@ -32,9 +32,13 @@ function Footer () {
         </Navbar>
       </div>
 
-      {/* solo se vera en celulares*/}
+      {/* solo se vera en celulares */}
       <div className="d-block d-sm-none">
-      <Navbar className="d-flex justify-content-around bg-dark fixed-bottom">navbar en celular</Navbar>
+        <Navbar className="d-flex justify-content-around bg-dark fixed-bottom">
+          <span className="text-left" style={{ color: 'white', fontSize: 12 }}>© Copyright DWEB Medellín - Colombia</span>
+          <a href="http://www.facebook.com"><IoLogoFacebook className="redes-icon-footer" size="1.5em"/></a>
+          <a href="http://www.facebook.com"><IoIosPerson className="redes-icon-footer" size="1.5em"/></a>
+        </Navbar>
       </div>
     </Fragment>
   )

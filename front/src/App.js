@@ -56,7 +56,7 @@ function App () {
     <Fragment>
       <NavBar />
 
-      <Container style={{ background: 'rgba(219, 220, 222, 1)' }}>
+      <Container style={{ background: 'rgba(219, 220, 222, 1)', marginTop: 80 }}>
         <Row>
           <Bienvenida />
         </Row>

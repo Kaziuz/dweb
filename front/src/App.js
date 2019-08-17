@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { Fragment, useState } from 'react'
 
 import { Container, Row } from 'reactstrap'
 
@@ -71,8 +71,8 @@ function App () {
           </div>
         </Row>
 
-        <a name="equipo"></a>
         <Row>
+          {/* <a name="equipo"></a> */}
           <Equipo data={data.seccion3} />
         </Row>
 

@@ -34,10 +34,12 @@
     "titulo": "Equipo",
     "descripcion": "Estamos en constante aprendizaje, el desarrollo de interfaces, los sitios web y las aplicaciones web son nuestro interes",
     "integrante1": {
-      "nombre": "Johnny Sepúlveda"
+      "nombre": "Johnny Sepúlveda",
+      "descripcion" : "blabla bla"
     },
     "integrante2": {
-      "nombre": "Daniel Villegas"
+      "nombre": "Daniel Villegas",
+      "descripcion" : "blabla bla"
     }
   }
 }

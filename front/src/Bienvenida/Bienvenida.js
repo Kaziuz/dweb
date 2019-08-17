@@ -8,19 +8,19 @@ const width = 120
 
 function Bienvenida (props) {
   console.log('props b', props)
-  const { descripcion, titulo, subtitulo,
+  const { descripcion, titulo,
     servicios, servicio1, servicio2, servicio3 } = props.data
 
   function drawIcon (image) {
     if (image.includes('Wordpress')) {
-      return <img src={wordpress} width={`${width}px`} />
+      return <img src={wordpress} alt={image} width={`${width}px`} />
     } else if (image.includes('UX')) {
-      return <img src={ux} width={`${width}px`} />
+      return <img src={ux} alt={image} width={`${width}px`} />
     } else if (image.includes('Ecommerce')) {
-      return <img src={ecommerce} width={`${width}px`} />
+      return <img src={ecommerce} alt={image} width={`${width}px`} />
     } else {
       return (
-        <img src={aplicaciones} width={`${width}px`} />
+        <img src={aplicaciones} alt={image} width={`${width}px`} />
       )
     }
   }
@@ -69,7 +69,7 @@ function Bienvenida (props) {
         { servicios.map((servicio, idx) => {
           return (
             <div key={`${idx}-moviles`} className="d-flex justify-content-center align-items-center">
-              <div className="">{drawIcon(servicio)}</div>
+             {drawIcon(servicio)}
               <span className="p-2 text-right text-uppercase font-weight-bold">
                 {servicio}
               </span>

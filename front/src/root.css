@@ -64,7 +64,6 @@ p {
 
 .wrap-img-gallery {
     position: relative;
-    width: calc(98% - 18px);
 }
 
 .img-galery {

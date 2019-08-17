@@ -10,7 +10,4 @@ TODO:
 4. alimentacion de datos con tabletop (google)
 5. implementar un form de contacto
 
-para el form de contacto
-https://sheelahb.com/blog/how-to-send-email-from-react-without-a-backend/
-https://ciunkos.com/creating-contact-forms-with-nodemailer-and-react
-https://medium.com/ingenious/sending-emails-from-a-create-react-app-dad5756a4ff2
+// animacioneshttps://egghead.io/lessons/react-animate-your-user-interface-in-react-with-styled-components-and-keyframes

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 function ImageCard (props) {
   const [espacios, setEspacios] = useState(0)
+  const [widthImage, setWidthImage] = useState(0)
   const imageRef = useRef()
 
   useEffect(() => {
@@ -11,15 +12,17 @@ function ImageCard (props) {
 
   const setSpans = () => {
     const altura = imageRef.current.clientHeight
+    const widthImageDOM = imageRef.current.clientWidth
     const espacios = Math.ceil(altura / 10)
     setEspacios(espacios)
+    setWidthImage(widthImageDOM)
   }
 
   const { imagen: { description, url } } = props
 
   return (
     <div style={{ gridRowEnd: `span ${espacios}` }}>
-      <div className="wrap-img-gallery">
+      <div className="wrap-img-gallery" style={{ width: `${widthImage}px` }}>
         <img
           ref={imageRef}
           alt={description}

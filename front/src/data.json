@@ -1,0 +1,43 @@
+{
+  "seccion1": {
+    "titulo": "¿Quienes Somos?",
+    "descripcion": "Somos una empresa joven, curiosos de la web, el diseño y las nuevas tecnologías, aprender es nuestro día a día aplicando nuevas técnicas de desarrollo y actualizando nuestro core constantemente, siempre  creando sistemas que ponemos a prueba para aplicar lo aprendido.",
+    "subtitulo" : "Nuestros servicios",
+    "servicio1": {
+      "titulo" : "Desarrollo web y app",
+      "descripcion": "Idea clara, un diseño fresco y vanguardista dan resultado a una ¡App web versátil y novedosa!. Para esto, nos apoyamos en metodologías ágiles de trabajo, implementamos diferentes herramientas de desarrollo dependiendo de la necesidad del cliente."
+    },
+    "servicio2": {
+      "titulo": "Implementación a la medida",
+      "descripcion": "Prototipos, front end, back end, testeo de calidad. Un apoyo para ti, y tu equipo, utilizando la mejor y más actual tecnología."
+    },
+    "servicio3": {
+      "titulo": "Asesorías",
+      "descripcion": [
+        "Servicios de hosting y dominio",
+        "Configuración de correos electrónicos",
+        "Mantenimiento de páginas y sitios  web"
+      ]
+    },
+    "servicios": [
+      "Ecommerce",
+      "Wordpress",
+      "UX",
+      "Aplicaciones"
+    ]
+  },
+  "seccion2": {
+    "titulo": "Nuestros servicios",
+    "descripcion": "Tiendas Online (Ecommerce Web), desarrollos web a la medida con wordpress o otras tecnólogias web"
+  },
+  "seccion3": {
+    "titulo": "Equipo",
+    "descripcion": "Estamos en constante aprendizaje, el desarrollo de interfaces, los sitios web y las aplicaciones web son nuestro interes",
+    "integrante1": {
+      "nombre": "Johnny Sepúlveda"
+    },
+    "integrante2": {
+      "nombre": "Daniel Villegas"
+    }
+  }
+}

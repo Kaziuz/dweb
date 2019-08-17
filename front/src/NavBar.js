@@ -11,7 +11,7 @@ function NavBar () {
 
   return (
     <Fragment>
-      <Navbar color="faded" className="root-color fixed-top" style={{boxShadow: '0 1px 3px rgba(0,0,0,.11)'}}>
+      <Navbar color="faded" className="root-color fixed-top" style={{ boxShadow: '0 1px 3px rgba(0,0,0,.11)' }}>
         <NavbarBrand
           href="/"
           className="mr-auto"
@@ -34,13 +34,10 @@ function NavBar () {
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
-              {/* <NavLink href="/components/">Components</NavLink> */}
-            </NavItem>
-            <NavItem>
               <NavLink
-                href="https://github.com/reactstrap/reactstrap"
+                href="#equipo"
               >
-                GitHub
+                Equipo
               </NavLink>
             </NavItem>
           </Nav>

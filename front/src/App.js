@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 
 import { Container, Row } from 'reactstrap'
 
@@ -17,7 +17,10 @@ import img5 from './Galeria/img5.jpg'
 import img6 from './Galeria/img6.jpg'
 import img7 from './Galeria/img7.jpg'
 
+import dataInicial from './data.json'
+
 function App () {
+  const [data] = useState(dataInicial)
 
   const dummyImages = [
     {
@@ -58,7 +61,7 @@ function App () {
 
       <Container style={{ background: 'rgba(219, 220, 222, 1)', marginTop: 80 }}>
         <Row>
-          <Bienvenida />
+          <Bienvenida data={data.seccion1} />
         </Row>
 
         <Row>
@@ -68,8 +71,9 @@ function App () {
           </div>
         </Row>
 
+        <a name="equipo"></a>
         <Row>
-          <Equipo />
+          <Equipo data={data.seccion3} />
         </Row>
 
         <Row>

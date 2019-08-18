@@ -7,7 +7,6 @@ import wordpress from '../img/servicios/wordpress.svg'
 const width = 120
 
 function Bienvenida (props) {
-  console.log('props b', props)
   const { descripcion, titulo,
     servicios, servicio1, servicio2, servicio3 } = props.data
 

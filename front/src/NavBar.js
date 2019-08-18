@@ -4,31 +4,27 @@ import { IoIosMenu } from 'react-icons/io'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
 import dwebblack from './img/dwebblack.png'
 
-function NavBar () {
+function NavBar (props) {
   const [collapsed, setCollapsed] = useState(true)
 
   const toggleNavbar = () => setCollapsed(!collapsed)
 
+  console.log('scroll in y nav', props.posScrollY)
+
   return (
     <Fragment>
-      <Navbar color="faded" className="root-color fixed-top" style={{ boxShadow: '0 1px 3px rgba(0,0,0,.11)' }}>
+      <Navbar color="faded" className="root-color fixed-top custom-navbar-final">
         <NavbarBrand
           href="/"
           className="mr-auto"
         >
-          <img
-            src={dwebblack}
-            width="90px"
-            alt=""
-            className="mr-3"
-          />
+          <div className="mr-3 logo" style={{ background: `url(${dwebblack}) no-repeat top left`, backgroundSize: 'contain' }}></div>
         </NavbarBrand>
 
         <NavbarToggler
           onClick={toggleNavbar}
-          className="mr-2"
         >
-          <IoIosMenu className="" size="2em"/>
+          <IoIosMenu className="" size="1.6em"/>
         </NavbarToggler>
 
         <Collapse isOpen={!collapsed} navbar>

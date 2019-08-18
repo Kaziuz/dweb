@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Container, Row } from 'reactstrap'
 
@@ -21,6 +21,7 @@ import dataInicial from './data.json'
 
 function App () {
   const [data] = useState(dataInicial)
+  const [scrollinY, setScrollinY] = useState(0)
 
   const dummyImages = [
     {
@@ -52,12 +53,20 @@ function App () {
       description: 'nothing',
     },
   ]
-
   const [img] = useState(dummyImages)
 
+  function handleScroll () {
+    const scrolly = window.scrollY
+    setScrollinY(scrolly)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <Fragment>
-      <NavBar />
+    <div>
+      <NavBar posScrollY={scrollinY} />
 
       <Container style={{ background: 'rgba(219, 220, 222, 1)', marginTop: 80 }}>
         <Row>
@@ -84,7 +93,7 @@ function App () {
 
       <Footer />
 
-    </Fragment>
+    </div>
   )
 }
 

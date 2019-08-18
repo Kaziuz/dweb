@@ -22,7 +22,8 @@ function ImageCard (props) {
 
   return (
     <div style={{ gridRowEnd: `span ${espacios}` }}>
-      <div className="wrap-img-gallery" style={{ width: `${widthImage}px` }}>
+      <div className="wrap-img-gallery"
+        style={{ width: `${widthImage}px` }}>
         <img
           ref={imageRef}
           alt={description}

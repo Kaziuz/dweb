@@ -1,24 +1,46 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState, useRef } from 'react'
 import { IoIosMenu } from 'react-icons/io'
-
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
+import { Collapse, Navbar, NavbarToggler,
+  NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
 import dwebblack from './img/dwebblack.png'
 
-function NavBar (props) {
+function NavBar ({ posScrollY }) {
+  const refLogo = useRef()
+  const navbarRef = useRef()
   const [collapsed, setCollapsed] = useState(true)
+
+  useEffect(() => {
+    // const element =  refLogo &&
+    // refLogo.current.classList.add('animated', 'bounceOutLeft')
+
+    if (posScrollY >= 10 ) {
+      refLogo.current.style.width = '36px'
+
+    } else {
+      refLogo.current.style.width = '120px' 
+    }
+
+    console.log('navbarRef', navbarRef)
+  })
 
   const toggleNavbar = () => setCollapsed(!collapsed)
 
-  console.log('scroll in y nav', props.posScrollY)
+  // console.log('select element', element)
 
   return (
     <Fragment>
-      <Navbar color="faded" className="root-color fixed-top custom-navbar-final">
+      <Navbar ref={navbarRef}
+        color="faded"
+        className="fixed-top"
+      >
         <NavbarBrand
           href="/"
           className="mr-auto"
         >
-          <div className="mr-3 logo" style={{ background: `url(${dwebblack}) no-repeat top left`, backgroundSize: 'contain' }}></div>
+          <div className="mr-3 logo"
+            style={{ background: `url(${dwebblack}) no-repeat top left`,
+              backgroundSize: 'contain',
+            }} ref={refLogo}></div>
         </NavbarBrand>
 
         <NavbarToggler
@@ -33,7 +55,7 @@ function NavBar (props) {
               <NavLink
                 href="#equipo"
               >
-                Equipo
+                  Equipo
               </NavLink>
             </NavItem>
           </Nav>

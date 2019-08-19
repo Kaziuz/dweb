@@ -1,66 +1,66 @@
 import React, { Fragment, useEffect, useState, useRef } from 'react'
 import { IoIosMenu } from 'react-icons/io'
-import { Collapse, Navbar, NavbarToggler,
-  NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
 import dwebblack from './img/dwebblack.png'
 
 function NavBar ({ posScrollY }) {
   const refLogo = useRef()
-  const navbarRef = useRef()
+  const refHamburguer = useRef()
+  const refNavbar = useRef()
+
   const [collapsed, setCollapsed] = useState(true)
 
   useEffect(() => {
     // const element =  refLogo &&
-    // refLogo.current.classList.add('animated', 'bounceOutLeft')
-
-    if (posScrollY >= 10 ) {
+    //   refLogo.current.classList.add('animated', 'bounceOutLeft')
+    if (posScrollY >= 10) {
+      refNavbar.current.style.boxShadow = '0 1px 3px rgba(0,0,0,.11)'
+      refNavbar.current.style.background = '#dbdcde'
+      refNavbar.current.style.height = '52px'
       refLogo.current.style.width = '36px'
-
+      refLogo.current.style.top = '0px'
+      // refHamburguer.current.style.top = '-47px'
     } else {
-      refLogo.current.style.width = '120px' 
+      refNavbar.current.style.boxShadow = '1px 1px 1px transparent'
+      refNavbar.current.style.background = 'transparent'
+      refNavbar.current.style.height = '100px'
+      refLogo.current.style.width = '120px'
+      refLogo.current.style.top = '30px'
+      // refHamburguer.current.style.top = '0px'
     }
-
-    console.log('navbarRef', navbarRef)
   })
 
   const toggleNavbar = () => setCollapsed(!collapsed)
 
-  // console.log('select element', element)
-
   return (
     <Fragment>
-      <Navbar ref={navbarRef}
-        color="faded"
-        className="fixed-top"
-      >
-        <NavbarBrand
-          href="/"
-          className="mr-auto"
-        >
-          <div className="mr-3 logo"
-            style={{ background: `url(${dwebblack}) no-repeat top left`,
-              backgroundSize: 'contain',
-            }} ref={refLogo}></div>
-        </NavbarBrand>
 
-        <NavbarToggler
-          onClick={toggleNavbar}
-        >
-          <IoIosMenu className="" size="1.6em"/>
-        </NavbarToggler>
+      <div className="d-none d-sm-block">
+        <nav ref={refNavbar}
+          className="navbar fixed-top custom-nav d-flex justify-content-center">
+          <a className="navbar-brand" href="#">
+            <div className="mr-3 logo"
+              style={{ background: `url(${dwebblack}) no-repeat top left`,
+                backgroundSize: 'contain',
+              }} ref={refLogo}></div>
+          </a>
+          {/* <div className="navbar-top" ref={refHamburguer}><IoIosMenu size="1.6em"/></div> NO BORRAR*/}
+        </nav>
+      </div>
 
-        <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar>
-            <NavItem>
-              <NavLink
-                href="#equipo"
-              >
-                  Equipo
-              </NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Navbar>
+      {/* solo para celulares */}
+      <div className="d-block d-sm-none">
+        <nav
+          className="navbar fixed-top root-color shadow custom-nav d-flex justify-content-center">
+          <a className="navbar-brand" href="#">
+            <div className="mr-3 logo-celular"
+              style={{ background: `url(${dwebblack}) no-repeat top left`,
+                backgroundSize: 'contain',
+              }}></div>
+          </a>
+          {/* <div className="navbar-top"><IoIosMenu size="1.6em"/></div> NO BORRAR*/}
+        </nav>
+      </div>
+
     </Fragment>
   )
 }

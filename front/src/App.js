@@ -68,7 +68,7 @@ function App () {
     <div>
       <NavBar posScrollY={scrollinY} />
 
-      <Container style={{ background: 'rgba(219, 220, 222, 1)', marginTop: 80 }}>
+      <Container style={{ background: 'rgba(219, 220, 222, 1)', marginTop: 140 }}>
         <Row>
           <Bienvenida data={data.seccion1} />
         </Row>

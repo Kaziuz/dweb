@@ -27,7 +27,7 @@ function Bienvenida (props) {
   return (
     <Fragment>
       <div className="col-lg-12">
-        <h2 className="text-left titulos-pricipales my-2">{titulo}</h2>
+        <h2 className="text-left titulos-pricipales text-center">{titulo}</h2>
         <p>{descripcion}</p>
       </div>
 

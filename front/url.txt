@@ -4,7 +4,6 @@ para las animaciones https://medium.com/@correo.oke/scroll-con-react-5cb11eb09a2
 
 TODO:
 
-2. Implementar la animación del menu
 4. alimentacion de datos con tabletop (google)
 
-// animacioneshttps://egghead.io/lessons/react-animate-your-user-interface-in-react-with-styled-components-and-keyframes
+

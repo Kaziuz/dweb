@@ -19,10 +19,16 @@ body {
 .logo{
     width: 120px;
     height: 120px;
-    transition: 1s;
+    transition: .33s;
+    position:relative;
 }
 
-.navbar-toggler {
+.logo-celular{
+    width: 36px;
+    height: 36px;
+}
+
+.navbar-top {
     padding: 0.95rem 0.75rem;
     font-size: 1.25rem;
     line-height: 1;
@@ -31,33 +37,16 @@ body {
     border-radius: .25rem;
     position: relative;
     top: 0px;
+    transition: .8s;
 }
 
-/* navbar */
-
-/* a como deve de llegar */
-/*
-.logo{
-    width: 36px;
-    height: 36px;
+.shadow {
+    height:52px; 
+    box-shadow: '0 1px 3px rgba(0,0,0,.11)';
 }
-*/
-
-/* a como debe de llegar */
-/*
-.navbar-toggler {
-    padding: 0.25rem 0.75rem;
-    font-size: 1.25rem;
-    line-height: 1;
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    position: relative;
-    top: -5px;
+.custom-nav {
+    transition: left 1s cubic-bezier(.694,.0482,.335,1);
 }
-*/
-
-/* fin navbar */
 
 .root-color {
     background:#dbdcde;

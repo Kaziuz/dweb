@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react'
+
 import ecommerce from '../img/servicios/ecommerce.svg'
 import aplicaciones from '../img/servicios/aplicaciones.svg'
 import ux from '../img/servicios/ux.svg'
 import wordpress from '../img/servicios/wordpress.svg'
-
-const width = 120
 
 function Bienvenida (props) {
   const { descripcion, titulo,
@@ -12,15 +11,17 @@ function Bienvenida (props) {
 
   function drawIcon (image) {
     if (image.includes('Wordpress')) {
-      return <img src={wordpress} alt={image} width={`${width}px`} />
+      return <div className="servicios-icons"
+        style={{ background: `url(${wordpress}) no-repeat top left`, backgroundSize: 'contain' }}></div>
     } else if (image.includes('UX')) {
-      return <img src={ux} alt={image} width={`${width}px`} />
+      return <div className="servicios-icons"
+        style={{ background: `url(${ux}) no-repeat top left`, backgroundSize: 'contain' }}></div>
     } else if (image.includes('Ecommerce')) {
-      return <img src={ecommerce} alt={image} width={`${width}px`} />
+      return <div className="servicios-icons"
+        style={{ background: `url(${ecommerce}) no-repeat top left`, backgroundSize: 'contain' }}></div>
     } else {
-      return (
-        <img src={aplicaciones} alt={image} width={`${width}px`} />
-      )
+      return <div className="servicios-icons"
+        style={{ background: `url(${aplicaciones}) no-repeat top left`, backgroundSize: 'contain' }}></div>
     }
   }
 
@@ -28,32 +29,32 @@ function Bienvenida (props) {
     <Fragment>
       <div className="col-lg-12">
         <h2 className="text-left titulos-pricipales text-center">{titulo}</h2>
-        <p>{descripcion}</p>
+        <p className="mt-4">{descripcion}</p>
       </div>
 
-      <div className="col-sm-4">
+      <div className="col-sm-4 mt-4">
         <h5 className="subtitulos text-left">{servicio1.titulo}</h5>
         <p>{servicio1.descripcion}</p>
       </div>
 
-      <div className="col-sm-4">
+      <div className="col-sm-4 mt-4">
         <h5 className="subtitulos text-left">{servicio2.titulo}</h5>
         <p>{servicio2.descripcion}</p>
       </div>
 
-      <div className="col-sm-4">
+      <div className="col-sm-4 mt-4">
         <h5 className="subtitulos text-left">{servicio3.titulo}</h5>
         <ul className="">
-          { servicio3.descripcion.map(o => {
-            return <li>{o}</li>
+          { servicio3.descripcion.map((o, idx) => {
+            return <li key={idx}>{o}</li>
           }) }
         </ul>
       </div>
 
-      <div className="d-none d-lg-flex col-lg-12 justify-content-between">
+      <div className="d-none d-sm-flex col-lg-12 justify-content-between">
         { servicios.map((servicio, idx) => {
           return (
-            <div key={servicio.titulo} style={{ display: 'inline-grid' }}>
+            <div key={`${idx}-${servicio.titulo}`} style={{ display: 'inline-grid' }}>
               {drawIcon(servicio)}
               <span className="p-2 text-center text-uppercase font-weight-bold">
                 {servicio}
@@ -67,8 +68,8 @@ function Bienvenida (props) {
       <div className="d-sm-none col-sm-12">
         { servicios.map((servicio, idx) => {
           return (
-            <div key={`${idx}-moviles`} className="d-flex justify-content-center align-items-center">
-             {drawIcon(servicio)}
+            <div key={`${idx}-moviles`} className="d-flex align-items-center">
+              {drawIcon(servicio)}
               <span className="p-2 text-right text-uppercase font-weight-bold">
                 {servicio}
               </span>

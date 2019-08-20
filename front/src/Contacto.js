@@ -117,7 +117,7 @@ function Contacto () {
                   </div>
                 </div>
               </div>
-              <div className="text-md-left mt-2">
+              <div className="text-md-left my-2">
                 <button className="btn bottom-send" type="submit">Enviar</button>
                 {showModal && <div> Correo enviado con exito </div>}
               </div>

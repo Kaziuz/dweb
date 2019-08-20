@@ -1,13 +1,13 @@
-import React, { Fragment, useEffect, useState, useRef } from 'react'
-import { IoIosMenu } from 'react-icons/io'
+import React, { Fragment, useEffect, useRef } from 'react'
+import PropTypes from 'prop-types'
+
+// import { IoIosMenu } from 'react-icons/io'
 import dwebblack from './img/dwebblack.png'
 
 function NavBar ({ posScrollY }) {
   const refLogo = useRef()
-  const refHamburguer = useRef()
+  // const refHamburguer = useRef()
   const refNavbar = useRef()
-
-  const [collapsed, setCollapsed] = useState(true)
 
   useEffect(() => {
     // const element =  refLogo &&
@@ -29,8 +29,6 @@ function NavBar ({ posScrollY }) {
     }
   })
 
-  const toggleNavbar = () => setCollapsed(!collapsed)
-
   return (
     <Fragment>
 
@@ -43,7 +41,7 @@ function NavBar ({ posScrollY }) {
                 backgroundSize: 'contain',
               }} ref={refLogo}></div>
           </a>
-          {/* <div className="navbar-top" ref={refHamburguer}><IoIosMenu size="1.6em"/></div> NO BORRAR*/}
+          {/* <div className="navbar-top" ref={refHamburguer}><IoIosMenu size="1.6em"/></div> NO BORRAR */}
         </nav>
       </div>
 
@@ -57,12 +55,16 @@ function NavBar ({ posScrollY }) {
                 backgroundSize: 'contain',
               }}></div>
           </a>
-          {/* <div className="navbar-top"><IoIosMenu size="1.6em"/></div> NO BORRAR*/}
+          {/* <div className="navbar-top"><IoIosMenu size="1.6em"/></div> NO BORRAR */}
         </nav>
       </div>
 
     </Fragment>
   )
+}
+
+NavBar.propTypes = {
+  posScrollY: PropTypes.number,
 }
 
 export default NavBar

@@ -7,13 +7,13 @@ export default function Equipo (props) {
     <Fragment>
       <div className="col-lg-12">
         <h2 className="titulos-pricipales text-left">{titulo}</h2>
-        <h6 className="subtitulos">{descripcion}</h6>
+        <h6 className="subtitulos mt-4">{descripcion}</h6>
       </div>
 
       {/* por default */}
       <div className="d-none d-sm-block">
 
-        <div className="col-lg-12  d-flex justify-content-around ">
+        <div className="col-lg-12 d-flex justify-content-between mt-2">
           <div className="mx-2">
             <img src="https://thispersondoesnotexist.com/image"
               className="img-fluid" alt={integrante2.nombre} style={{ maxWidth: '35vw' }} />

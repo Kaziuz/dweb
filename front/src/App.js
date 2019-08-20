@@ -64,24 +64,31 @@ function App () {
     window.addEventListener('scroll', handleScroll)
   }, [])
 
+  // tengo el navbar supeior fixed, para que el contenido
+  // no quede tapado agrege un margintop, dependiendo
+  // de si estamos en moviles o en desktop ese marginTop
+  // se vuelve mas grande o mas chico
+  const addmarginTop = window.innerWidth <= 500 ? 70 : 140
   return (
     <div>
       <NavBar posScrollY={scrollinY} />
 
-      <Container style={{ background: 'rgba(219, 220, 222, 1)', marginTop: 140 }}>
+      <Container
+        style={{ background: 'rgba(219, 220, 222, 1)',
+          marginTop: addmarginTop }}>
         <Row>
           <Bienvenida data={data.seccion1} />
         </Row>
 
         <Row>
-          <div className="col-lg-12">
-            <h2 className="titulos-pricipales text-left mt-4">Proyectos</h2>
+          <div className="col-lg-12 mt-4">
+            <h2 className="titulos-pricipales text-left my-4">Proyectos</h2>
             <Galeria images={img}/>
           </div>
         </Row>
 
         <Row>
-          {/* <a name="equipo"></a> */}
+          {/* <a name="equipo"></a> NO BORRAR */}
           <Equipo data={data.seccion3} />
         </Row>
 

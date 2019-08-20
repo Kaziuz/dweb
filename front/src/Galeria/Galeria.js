@@ -8,7 +8,7 @@ function Galeria ({ images }) {
   })
 
   return (
-    <div className="wrapGaleria">
+    <div className="wrap-galeria mt-4">
       <div className="image-list">{imagenes}</div>
     </div>
   )

@@ -90,6 +90,10 @@ p {
     grid-auto-rows: 12px;
 }
 
+.wrap-galeria {
+    margin-top: 20px;
+}
+
 .image-list img{
     width:250px;
 }
@@ -129,10 +133,6 @@ p {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-}
-
-.wrapGaleria{
-    margin-top: 80px;
 }
 
 .redes-icon {
@@ -184,4 +184,11 @@ p {
     background: black;
     border-radius: 0;
     border: 1px solid transparent;
+}
+
+.servicios-icons {
+    padding: 5px;
+    margin: 5px;
+    width: 120px;
+    height: 120px;
 }

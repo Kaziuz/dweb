@@ -18,8 +18,6 @@ function ImageCard (props) {
     setWidthImage(widthImageDOM)
   }
 
-  console.log('props', props)
-
   return (
     <div style={{ gridRowEnd: `span ${espacios}` }}>
       <div className="wrap-img-gallery"
@@ -31,7 +29,8 @@ function ImageCard (props) {
           className="img-galery"
         />
         <div className="more-info">
-          <h6 className="text-warning font-weight-bold text-center" style={{ lineHeight: 6, fontSize: 22 }}>{props.imagen.proyecto}</h6>
+          <h6 className="text-warning font-weight-bold text-center"
+            style={{ lineHeight: 6, fontSize: 22 }}>{props.imagen.proyecto}</h6>
           <a href={props.imagen.urlproyecto} target="_blank">Link hacia la web</a>
         </div>
       </div>

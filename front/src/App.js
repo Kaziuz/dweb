@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import dataInicial from './data.json'
 import { Container, Row } from 'reactstrap'
 import Tabletop from 'tabletop'
@@ -9,11 +9,11 @@ import Equipo from './Equipo/Equipo'
 import Footer from './Footer'
 import Contacto from './Contacto'
 
-
 function App () {
   const [data] = useState(dataInicial)
   const [googleSheet, setGoogleSheet] = useState([])
   const [scrollinY, setScrollinY] = useState(0)
+  const refBody = useRef()
 
   function handleScroll () {
     const scrolly = window.scrollY
@@ -25,7 +25,6 @@ function App () {
     Tabletop.init({
       key: '1Wx2_nXx-33vHE3jcyL0-4uOYu0NSn191OsSjo-FfyW4',
       callback: res => {
-        //  console.log(res.proyectos.elements)
         setGoogleSheet(res.proyectos.elements)
       },
     })
@@ -42,8 +41,13 @@ function App () {
   // se vuelve mas grande o mas chico
   const addmarginTop = window.innerWidth <= 500 ? 70 : 140
 
+  function onGoTop (e) {
+    e.preventDefault()
+    window.scrollTo(0, 0)
+  }
+
   return (
-    <div>
+    <div ref={refBody}>
       <NavBar posScrollY={scrollinY} />
 
       <Container
@@ -70,6 +74,13 @@ function App () {
         </Row>
 
       </Container>
+
+      <button type="button" className="btn float-right custom-buttom"
+        onClick={e => onGoTop(e)}
+      >
+        TOP
+      </button>
+      <div style={{ clear: 'both' }}></div>
 
       <Footer />
 

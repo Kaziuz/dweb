@@ -69,6 +69,7 @@ function App () {
   // de si estamos en moviles o en desktop ese marginTop
   // se vuelve mas grande o mas chico
   const addmarginTop = window.innerWidth <= 500 ? 70 : 140
+
   return (
     <div>
       <NavBar posScrollY={scrollinY} />

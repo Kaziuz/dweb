@@ -8,7 +8,7 @@ function ImageCard (props) {
 
   useEffect(() => {
     imageRef.current.addEventListener('load', setSpans())
-  }, [])
+  })
 
   const setSpans = () => {
     const altura = imageRef.current.clientHeight

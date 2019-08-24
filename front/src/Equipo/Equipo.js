@@ -73,8 +73,6 @@ export default function Equipo (props) {
 
         </div>
       </div>
-
-
     </Fragment>
   )
 }

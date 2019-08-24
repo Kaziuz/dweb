@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ImageCard from './ImageCard'
 
-function Galeria ({ images }) {
-  const imagenes = images.map((img, idx) => {
-    return <ImageCard key={idx} imagen={img} />
+function Galeria ({ google }) {
+  const imagenes = google.map((row, idx) => {
+    return <ImageCard key={idx} imagen={row} />
   })
 
   return (
@@ -15,7 +15,7 @@ function Galeria ({ images }) {
 }
 
 Galeria.propTypes = {
-  images: PropTypes.array,
+  google: PropTypes.array,
 }
 
 export default Galeria

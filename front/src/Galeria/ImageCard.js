@@ -18,7 +18,7 @@ function ImageCard (props) {
     setWidthImage(widthImageDOM)
   }
 
-  const { imagen: { description, url } } = props
+  console.log('props', props)
 
   return (
     <div style={{ gridRowEnd: `span ${espacios}` }}>
@@ -26,12 +26,13 @@ function ImageCard (props) {
         style={{ width: `${widthImage}px` }}>
         <img
           ref={imageRef}
-          alt={description}
-          src={url}
+          alt={props.imagen.cliente}
+          src={props.imagen.img}
           className="img-galery"
         />
         <div className="more-info">
-          <a href="http://www.facebook.com">Link hacia la web </a>
+          <h6 className="text-warning font-weight-bold text-center" style={{ lineHeight: 6, fontSize: 22 }}>{props.imagen.proyecto}</h6>
+          <a href={props.imagen.urlproyecto} target="_blank">Link hacia la web</a>
         </div>
       </div>
     </div>
@@ -40,8 +41,9 @@ function ImageCard (props) {
 
 ImageCard.propTypes = {
   imagen: PropTypes.object,
-  description: PropTypes.string,
-  url: PropTypes.string,
+  cliente: PropTypes.string,
+  img: PropTypes.string,
+  urlproyecto: PropTypes.string,
 }
 
 export default ImageCard

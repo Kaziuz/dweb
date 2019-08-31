@@ -15,13 +15,21 @@ function App () {
   const [scrollinY, setScrollinY] = useState(0)
   const refBody = useRef()
 
+  useEffect(() => {
+    window.addEventListener('load', handleScroll)
+    tabletopInit()
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+  })
+
   function handleScroll () {
     const scrolly = window.scrollY
     setScrollinY(scrolly)
   }
 
   function tabletopInit () {
-    console.log('tabletopInit')
     Tabletop.init({
       key: '1Wx2_nXx-33vHE3jcyL0-4uOYu0NSn191OsSjo-FfyW4',
       callback: res => {
@@ -30,12 +38,7 @@ function App () {
     })
   }
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    tabletopInit()
-  }, [])
-
-  // tengo el navbar supeior fixed, para que el contenido
+  // tengo el navbar superior fixed, para que el contenido
   // no quede tapado agrege un margintop, dependiendo
   // de si estamos en moviles o en desktop ese marginTop
   // se vuelve mas grande o mas chico

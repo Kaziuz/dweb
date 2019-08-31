@@ -3,9 +3,9 @@ import axios from 'axios'
 
 function Contacto () {
   const [Email, setEmail] = useState('')
-  const [nombre, setNombreUsuario] = useState('Tu nombre')
-  const [asunto, setAsunto] = useState('Asunto')
-  const [mensaje, setMensaje] = useState('Mensaje')
+  const [nombre, setNombreUsuario] = useState('')
+  const [asunto, setAsunto] = useState('')
+  const [mensaje, setMensaje] = useState('')
   const [showModal, setShowModal] = useState(false)
   const validEmail = isValidEmail(Email)
 
@@ -18,7 +18,7 @@ function Contacto () {
     e.preventDefault()
 
     if (Boolean(validEmail) === false) {
-      window.alert('su correo esta mal o faltan datos') // mejorar este alert
+      window.alert('su correo esta mal o faltan datos')
     } else {
       const datos = {
         nombre,
@@ -31,7 +31,7 @@ function Contacto () {
         url: 'http://localhost:3032/send',
         data: datos,
       }).then(response => {
-        // console.log('response server', response)
+        console.log('response server', response)
         if (response.status === 201) {
           setEmail('')
           setNombreUsuario('Tu nombre')
@@ -68,6 +68,7 @@ function Contacto () {
                       name="name"
                       className="form-control form-custom"
                       value={nombre}
+                      placeholder="Tu nombre"
                       onChange={e => setNombreUsuario(e.target.value)}
                     />
                   </div>

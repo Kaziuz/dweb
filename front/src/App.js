@@ -49,6 +49,8 @@ function App () {
     window.scrollTo(0, 0)
   }
 
+  console.log('pos en Y', scrollinY)
+
   return (
     <div ref={refBody}>
       <NavBar posScrollY={scrollinY} />

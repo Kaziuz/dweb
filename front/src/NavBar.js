@@ -36,7 +36,7 @@ function NavBar ({ posScrollY }) {
         <nav ref={refNavbar}
           className="navbar fixed-top custom-nav d-flex justify-content-center">
           <a className="navbar-brand" href="#">
-            <div className="mr-3 logo"
+            <div className="mr-3 logo animated flipInX slow"
               style={{ background: `url(${dwebblack}) no-repeat top left`,
                 backgroundSize: 'contain',
               }} ref={refLogo}></div>
@@ -50,7 +50,7 @@ function NavBar ({ posScrollY }) {
         <nav
           className="navbar fixed-top root-color shadow custom-nav d-flex justify-content-center">
           <a className="navbar-brand" href="#">
-            <div className="mr-3 logo-celular"
+            <div className="mr-3 logo-celular animated flipInX slow"
               style={{ background: `url(${dwebblack}) no-repeat top left`,
                 backgroundSize: 'contain',
               }}></div>

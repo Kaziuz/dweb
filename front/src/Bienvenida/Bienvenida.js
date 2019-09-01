@@ -28,21 +28,21 @@ function Bienvenida (props) {
   return (
     <Fragment>
       <div className="col-lg-12">
-        <h2 className="text-left titulos-pricipales text-center">{titulo}</h2>
-        <p className="mt-4">{descripcion}</p>
+        <h2 className="text-left titulos-pricipales text-center animated bounceIn delay-1s slow">{titulo}</h2>
+        <p className="mt-4 animated bounceInLeft delay-2s slow">{descripcion}</p>
       </div>
 
-      <div className="col-sm-4 mt-4">
+      <div className="col-sm-4 mt-4 animated fadeIn delay-1s slow">
         <h5 className="subtitulos text-left">{servicio1.titulo}</h5>
         <p>{servicio1.descripcion}</p>
       </div>
 
-      <div className="col-sm-4 mt-4">
+      <div className="col-sm-4 mt-4 animated fadeIn delay-2s slow">
         <h5 className="subtitulos text-left">{servicio2.titulo}</h5>
         <p>{servicio2.descripcion}</p>
       </div>
 
-      <div className="col-sm-4 mt-4">
+      <div className="col-sm-4 mt-4 animated fadeIn delay-3s slow">
         <h5 className="subtitulos text-left">{servicio3.titulo}</h5>
         <ul className="">
           { servicio3.descripcion.map((o, idx) => {

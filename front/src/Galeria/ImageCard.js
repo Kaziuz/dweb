@@ -26,7 +26,7 @@ function ImageCard (props) {
           ref={imageRef}
           alt={props.imagen.cliente}
           src={props.imagen.img}
-          className="img-galery"
+          className={`img-galery ${props.showHideProyectos} ${props.animation}`}
         />
         <div className="more-info">
           {/*
@@ -45,6 +45,8 @@ ImageCard.propTypes = {
   cliente: PropTypes.string,
   img: PropTypes.string,
   urlproyecto: PropTypes.string,
+  animation: PropTypes.string,
+  showHideProyectos: PropTypes.string,
 }
 
 export default ImageCard

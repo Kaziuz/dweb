@@ -49,7 +49,7 @@ function Contacto () {
 
   return (
     <Fragment>
-      <div className="col-lg-12">
+      <div className="col-lg-12 mt-4">
         <h2 className="titulos-pricipales text-left">Contacto</h2>
         <p className="text-left w-responsive mx-auto mb-5">
           Usted tiene alguna idea, tienda web o proyecto que quiere construir?

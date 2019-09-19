@@ -84,7 +84,7 @@ p {
 }
 
 .image-list{
-    display: grid;
+    /* display: grid; */
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap:0 10px;
     grid-auto-rows: 12px;
@@ -109,7 +109,7 @@ p {
 }
 
 .img-galery {
-    display: block;
+    /* display: block; */
     width: 100%;
     height: auto;
 }

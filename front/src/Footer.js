@@ -8,7 +8,7 @@ import dwebwhite from './img/dwebwhite.png'
 function Footer () {
   return (
     <Fragment>
-      <div className="d-none d-sm-block">
+      <div className="d-none d-sm-block mt-4">
         <Navbar color="faded"
           className="d-flex justify-content-around bg-dark py-2 px-2">
           <NavbarBrand

@@ -11,19 +11,24 @@ function Bienvenida (props) {
 
   function drawIcon (image) {
     if (image.includes('Wordpress')) {
-      return <div className="servicios-icons"
+      return <div className={`servicios-icons`}
         style={{ background: `url(${wordpress}) no-repeat top left`, backgroundSize: 'contain' }}></div>
     } else if (image.includes('UX')) {
-      return <div className="servicios-icons"
+      return <div className={`servicios-icons`}
         style={{ background: `url(${ux}) no-repeat top left`, backgroundSize: 'contain' }}></div>
     } else if (image.includes('Ecommerce')) {
-      return <div className="servicios-icons"
+      return <div className={`servicios-icons`}
         style={{ background: `url(${ecommerce}) no-repeat top left`, backgroundSize: 'contain' }}></div>
     } else {
-      return <div className="servicios-icons"
+      return <div className={`servicios-icons`}
         style={{ background: `url(${aplicaciones}) no-repeat top left`, backgroundSize: 'contain' }}></div>
     }
   }
+
+  const hideDesktop = 'none'
+  const showDesktop = 'inline-grid'
+  const showHideProyectos =  props.scrollY <= 255 ? hideDesktop : showDesktop
+  const addanimations = props.scrollY > 250 ? 'animated zoomIn' : 'animated zoomOut'
 
   return (
     <Fragment>
@@ -54,29 +59,28 @@ function Bienvenida (props) {
       <div className="d-none d-sm-flex col-lg-12 justify-content-between">
         { servicios.map((servicio, idx) => {
           return (
-            <div key={`${idx}-${servicio.titulo}`} style={{ display: 'inline-grid' }}>
+            <div key={`${idx}-${servicio.titulo}`} style={{ display: `${showHideProyectos}` }}
+              className={`${addanimations} delay-${idx}s faster`}>
               {drawIcon(servicio)}
               <span className="p-2 text-center text-uppercase font-weight-bold">
                 {servicio}
               </span>
             </div>
           )
-        }
-        )}
+        })}
       </div>
 
       <div className="d-sm-none col-sm-12">
         { servicios.map((servicio, idx) => {
           return (
-            <div key={`${idx}-moviles`} className="d-flex align-items-center">
+            <div key={`${idx}-moviles`} className={`d-flex align-items-center ${addanimations} delay-${idx}s faster`}>
               {drawIcon(servicio)}
               <span className="p-2 text-right text-uppercase font-weight-bold">
                 {servicio}
               </span>
             </div>
           )
-        })
-        }
+        })}
       </div>
 
     </Fragment>

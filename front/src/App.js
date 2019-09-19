@@ -38,18 +38,23 @@ function App () {
     })
   }
 
+  function onGoTop (e) {
+    e.preventDefault()
+    window.scrollTo(0, 0)
+  }
+
   // tengo el navbar superior fixed, para que el contenido
   // no quede tapado agrege un margintop, dependiendo
   // de si estamos en moviles o en desktop ese marginTop
   // se vuelve mas grande o mas chico
   const addmarginTop = window.innerWidth <= 500 ? 70 : 140
 
-  function onGoTop (e) {
-    e.preventDefault()
-    window.scrollTo(0, 0)
-  }
-
-  console.log('pos en Y', scrollinY)
+  // animations variables
+  const hide = 'd-none'
+  const show = 'd-block'
+  // console.log('posY', scrollinY)
+  const showHideTitleProyectos = scrollinY < 420 ? hide : show
+  const addAnimationTitleProyectos = scrollinY >= 420 ? 'animated slideInUp slow' : ''
 
   return (
     <div ref={refBody}>
@@ -59,19 +64,19 @@ function App () {
         style={{ background: 'rgba(219, 220, 222, 1)',
           marginTop: addmarginTop }}>
         <Row>
-          <Bienvenida data={data.seccion1} />
+          <Bienvenida data={data.seccion1} scrollY={scrollinY}/>
         </Row>
 
         <Row>
           <div className="col-lg-12 mt-4">
-            <h2 className="titulos-pricipales text-left my-4">Proyectos</h2>
-            <Galeria google={googleSheet} />
+            <h2 className={`${showHideTitleProyectos} titulos-pricipales text-left my-4 ${addAnimationTitleProyectos}`}>Proyectos</h2>
+            <Galeria google={googleSheet} scrollY={scrollinY} />
           </div>
         </Row>
 
         <Row>
           {/* <a name="equipo"></a> NO BORRAR */}
-          <Equipo data={data.seccion3} />
+          <Equipo data={data.seccion3} scrollY={scrollinY} />
         </Row>
 
         <Row>
@@ -80,12 +85,15 @@ function App () {
 
       </Container>
 
+      {/*
+
       <button type="button" className="btn float-right custom-buttom"
         onClick={e => onGoTop(e)}
       >
         TOP
       </button>
       <div style={{ clear: 'both' }}></div>
+      */}
 
       <Footer />
 

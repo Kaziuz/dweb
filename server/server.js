@@ -22,14 +22,8 @@ server.pre(cors.preflight)
 server.use(cors.actual)
 
 //query & bodyparse to use data send by url
-server.use(restify.plugins.queryParser({
-  mapParams: true
-}))
-
-server.use(restify.plugins.bodyParser({
-  mapParams: true
-}))
-
+server.use(restify.plugins.queryParser({ mapParams: true }))
+server.use(restify.plugins.bodyParser({ mapParams: true }))
 server.use(restify.plugins.fullResponse())
 
 // setup email config
@@ -47,7 +41,7 @@ const smtpTransport = nodemailer.createTransport({
 server.post('/send', function create(req, res, next) {
   let email = {
     from: req.params.email,
-    to: 'johnnysepulveda988@gmail.com',
+    to: 'infodwebapps@gmail.com',
     subject: req.params.asunto,
     html: `<div>
       <h1>Nombre de quien envía:<b>${req.params.nombre}</b></h1><br/>
@@ -74,12 +68,10 @@ server.post('/send', function create(req, res, next) {
 
 // test endPoint
 server.get('/', (req, res, next) => {
-  res.send({ saludo: 'El server esta ready .!.' })
+  res.send({ saludo: 'server ready!' })
   next()
 })
 
 server.listen(port, () => {
   console.log('ready server on %s', server.url)
 })
-
-

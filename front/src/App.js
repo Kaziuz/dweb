@@ -80,12 +80,10 @@ function App () {
         </Row>
 
         <Row>
-          <Contacto />
+          <Contacto data={data.seccion4} scrollY={scrollinY} />
         </Row>
 
       </Container>
-
-      {/*
 
       <button type="button" className="btn float-right custom-buttom"
         onClick={e => onGoTop(e)}
@@ -93,7 +91,6 @@ function App () {
         TOP
       </button>
       <div style={{ clear: 'both' }}></div>
-      */}
 
       <Footer />
 

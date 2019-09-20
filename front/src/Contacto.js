@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import axios from 'axios'
 
-function Contacto () {
+function Contacto (props) {
   const [Email, setEmail] = useState('')
   const [nombre, setNombreUsuario] = useState('')
   const [asunto, setAsunto] = useState('')
@@ -16,7 +16,6 @@ function Contacto () {
 
   const sendEmail = e => {
     e.preventDefault()
-
     if (Boolean(validEmail) === false) {
       window.alert('su correo esta mal o faltan datos')
     } else {
@@ -28,7 +27,7 @@ function Contacto () {
       }
       axios({
         method: 'POST',
-        url: 'http://localhost:3032/send',
+        url: 'http://localhost:3032/send', // local
         data: datos,
       }).then(response => {
         console.log('response server', response)
@@ -38,7 +37,7 @@ function Contacto () {
           setAsunto('Asunto')
           setMensaje('Mensaje')
           setShowModal(false)
-          window.alert('mensaje enviado exitomente')
+          window.alert('mensaje enviado exitosamente')
         }
       }).catch(err => {
         console.log(err.response)
@@ -50,12 +49,8 @@ function Contacto () {
   return (
     <Fragment>
       <div className="col-lg-12 mt-4">
-        <h2 className="titulos-pricipales text-left">Contacto</h2>
-        <p className="text-left w-responsive mx-auto mb-5">
-          Usted tiene alguna idea, tienda web o proyecto que quiere construir?
-          Por favor sientase en la libertad de escribirnos y exponernos su idea.
-          En la brevedad estaremos en contacto con usted
-        </p>
+        <h2 className="titulos-pricipales text-left">{props.data.titulo}</h2>
+        <p className="text-left w-responsive mx-auto mb-5">{props.data.descripcion}</p>
         <div className="row">
           <div className="col-md-9 mb-md-0 mb-5">
             <form id="contact-form" name="contact-form" onSubmit={sendEmail}>

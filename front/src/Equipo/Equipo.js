@@ -23,8 +23,8 @@ export default function Equipo (props) {
   const showDescriptionTeam = props.scrollY < 1500 ? hideDesktop : showDesktop
   const addanimaNameDescripTeam = props.scrollY >= 1500 ? 'animated fadeInLeft' : ''
   
-  const showRedesTeam = props.scrollY < 1550 ? hideDesktop : showDesktop
-  const addanimationRedesTeam = props.scrollY >= 1550 ? 'animated rotatein' : ''
+  const showRedesTeam = props.scrollY < 1730 ? hideDesktop : showDesktop
+  const addanimationRedesTeam = props.scrollY >= 1730 ? 'animated rotateIn' : ''
 
   console.log('scroll en equipo', props.scrollY)
   return (
@@ -36,7 +36,7 @@ export default function Equipo (props) {
 
       {/* por default */}
       <div className="d-none d-sm-block">
-        <div className="col-lg-12 d-flex justify-content-around mt-2">
+        <div className="col-lg-12 d-flex justify-content-between mt-2">
           <div className="mx-2">
             <img src="https://bridge34.qodeinteractive.com/wp-content/uploads/2016/05/team.jpg"
               className={`${showpersons} img-fluid ${addanimationTeam}`} alt={integrante2.nombre} style={{ maxWidth: '35vw' }} />

@@ -14,8 +14,8 @@ export default function Equipo (props) {
   const showHidedescription =  props.scrollY < 1027 ? hideDesktop : showDesktop
   const addanimaaddAnimationdescription = props.scrollY >= 1027 ? 'animated fadeIn delay-1s slow' : ''
 
-  const showpersons =  props.scrollY < 1238 ? hideDesktop : showDesktop
-  const addanimationTeam = props.scrollY >= 1238 ? 'animated fadeIn slow' : ''
+  const showpersons =  props.scrollY < 1230 ? hideDesktop : showDesktop
+  const addanimationTeam = props.scrollY >= 1230 ? 'animated fadeIn slow' : ''
 
   const showNamesTeam = props.scrollY < 1451 ? hideDesktop : showDesktop
   const addanimaNameTeam = props.scrollY >= 1451 ? 'animated fadeInUp' : ''
@@ -26,7 +26,6 @@ export default function Equipo (props) {
   const showRedesTeam = props.scrollY < 1730 ? hideDesktop : showDesktop
   const addanimationRedesTeam = props.scrollY >= 1730 ? 'animated rotateIn' : ''
 
-  console.log('scroll en equipo', props.scrollY)
   return (
     <Fragment>
       <div className="col-lg-12 mt-4">

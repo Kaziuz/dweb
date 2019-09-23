@@ -9,10 +9,27 @@ function Contacto (props) {
   const [showModal, setShowModal] = useState(false)
   const validEmail = isValidEmail(Email)
 
+  const { scrollY } = props 
+
+  // variables para animacion
+  const hideDesktop = 'd-none'
+  const showDesktop = 'd-block'
+
+  // falta animar este contenido
+  const hidetitle = scrollY < 1806 ? hideDesktop : showDesktop
+  const hideDescription = scrollY < 1926 ? hideDesktop : showDesktop
+  const hideinputName = scrollY < 2035 ? hideDesktop : showDesktop
+  const hideinputEmail = scrollY < 2035 ? hideDesktop : showDesktop
+  const hideinputAsunto = scrollY < 2056 ? hideDesktop : showDesktop
+  const hideinputMensaje = scrollY <  2120 ? hideDesktop : showDesktop
+  const hideinfoComplement = scrollY < 2159 ? hideDesktop : showDesktop
+  const hideshowButton = scrollY < 2194 ? hideDesktop : showDesktop
+
   function isValidEmail (mail) {
     // eslint-disable-next-line no-useless-escape
     return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail)
   }
+  console.log('scrollY', props.scrollY)
 
   const sendEmail = e => {
     e.preventDefault()
@@ -49,13 +66,14 @@ function Contacto (props) {
   return (
     <Fragment>
       <div className="col-lg-12 mt-4">
-        <h2 className="titulos-pricipales text-left">{props.data.titulo}</h2>
-        <p className="text-left w-responsive mx-auto mb-5">{props.data.descripcion}</p>
+        <h2 className={`${hidetitle} titulos-pricipales text-left`}>{props.data.titulo}</h2>
+        <p className={`${hideDescription} text-left w-responsive mx-auto mb-5`}>{props.data.descripcion}</p>
         <div className="row">
           <div className="col-md-9 mb-md-0 mb-5">
             <form id="contact-form" name="contact-form" onSubmit={sendEmail}>
               <div className="row">
-                <div className="col-md-6">
+
+                <div className={`${hideinputName} col-md-6`}>
                   <div className="md-form mb-2">
                     <input
                       type="text"
@@ -68,7 +86,8 @@ function Contacto (props) {
                     />
                   </div>
                 </div>
-                <div className="col-md-6">
+
+                <div className={`${hideinputEmail} col-md-6`}>
                   <div className="md-form mb-2">
                     <input
                       type="text"
@@ -81,9 +100,11 @@ function Contacto (props) {
                     />
                   </div>
                 </div>
+
               </div>
               <div className="row">
-                <div className="col-md-12">
+
+                <div className={`${hideinputAsunto} col-md-12`}>
                   <div className="md-form mb-2">
                     <input
                       type="text"
@@ -96,9 +117,11 @@ function Contacto (props) {
                     />
                   </div>
                 </div>
+
               </div>
               <div className="row">
-                <div className="col-md-12">
+
+                <div className={`${hideinputMensaje} col-md-12`}>
                   <div className="md-form">
                     <textarea
                       type="text"
@@ -112,9 +135,10 @@ function Contacto (props) {
                     ></textarea>
                   </div>
                 </div>
+
               </div>
               <div className="text-md-left my-2">
-                <button className="btn bottom-send" type="submit">Enviar</button>
+                <button className={`${hideshowButton} btn bottom-send`} type="submit">Enviar</button>
                 {showModal && <div> Correo enviado con exito </div>}
               </div>
             </form>
@@ -122,7 +146,7 @@ function Contacto (props) {
           </div>
 
           <div className="col-md-3 text-center">
-            <ul className="list-unstyled mb-0">
+            <ul className={`${hideinfoComplement} hideinfoComplementlist-unstyled mb-0`}>
               <li><i className="fas fa-map-marker-alt fa-2x"></i>
                 <p>Medellín, Antioquia - Colombia</p>
               </li>

@@ -1,21 +1,21 @@
 import React, { Fragment } from 'react'
 import { IoLogoFacebook, IoIosPerson } from 'react-icons/io'
+import gordo from '../img/equipo/gordo.jpg'
+import alex from '../img/equipo/alex.jpg'
 
 export default function Equipo (props) {
-  const { integrante1, integrante2, titulo, descripcion } = props.data
-
+  const { integrante1, integrante2, titulo, descripcion } = props.data  
   // variables para animation
   const hideDesktop = 'd-none'
   const showDesktop = 'd-block'
-
-  const showHideTitleProyectos =  props.scrollY < 930 ? hideDesktop : showDesktop
-  const addanimaaddAnimationTitleEquipo = props.scrollY >= 930 ? 'animated slideInUp slow' : ''
+  const showHideTitleProyectos =  props.scrollY < 893 ? hideDesktop : showDesktop
+  const addanimaaddAnimationTitleEquipo = props.scrollY >= 893 ? 'animated slideInUp slow' : ''
 
   const showHidedescription =  props.scrollY < 1027 ? hideDesktop : showDesktop
   const addanimaaddAnimationdescription = props.scrollY >= 1027 ? 'animated fadeIn delay-1s slow' : ''
 
-  const showpersons =  props.scrollY < 1230 ? hideDesktop : showDesktop
-  const addanimationTeam = props.scrollY >= 1230 ? 'animated fadeIn slow' : ''
+  const showpersons =  props.scrollY < 1178 ? hideDesktop : showDesktop
+  const addanimationTeam = props.scrollY >= 1178 ? 'animated fadeIn slow' : ''
 
   const showNamesTeam = props.scrollY < 1451 ? hideDesktop : showDesktop
   const addanimaNameTeam = props.scrollY >= 1451 ? 'animated fadeInUp' : ''
@@ -36,19 +36,20 @@ export default function Equipo (props) {
       {/* por default */}
       <div className="d-none d-sm-block">
         <div className="col-lg-12 d-flex justify-content-between mt-2">
+
           <div className="mx-2">
-            <img src="https://bridge34.qodeinteractive.com/wp-content/uploads/2016/05/team.jpg"
+            <img src={gordo}
               className={`${showpersons} img-fluid ${addanimationTeam}`} alt={integrante2.nombre} style={{ maxWidth: '35vw' }} />
             <h6 className={`${showNamesTeam} ${addanimaNameTeam} subtitulos mt-4`}>{integrante2.nombre}</h6>
             <p className={`${showDescriptionTeam} ${addanimaNameDescripTeam}`}>{integrante2.descripcion}</p>
             <div className="d-flex justify-content-start">
               <a href="http://www.facebook.com"><IoLogoFacebook className={`${showRedesTeam} ${addanimationRedesTeam} redes-icon`} size="3em"/></a>
-              <a href="http://www.twitter.com"><IoIosPerson className={`${showRedesTeam} ${addanimationRedesTeam} redes-icon ml-2`} size="3em"/></a>
+              <a href="http://danielarango.cleverapps.io/"><IoIosPerson className={`${showRedesTeam} ${addanimationRedesTeam} redes-icon ml-2`} size="3em"/></a>
             </div>
           </div>
 
           <div className="mx-2">
-            <img src="https://bridge34.qodeinteractive.com/wp-content/uploads/2016/05/team2.jpg"
+            <img src={alex}
               className={`${showpersons} img-fluid ${addanimationTeam} delay-1s`} alt={integrante1.nombre} style={{ maxWidth: '35vw' }} />
             <h6 className={`${showNamesTeam} ${addanimaNameTeam} subtitulos mt-4`}>{integrante1.nombre}</h6>
             <p className={`${showDescriptionTeam} ${addanimaNameDescripTeam}`}>{integrante1.descripcion}</p>
@@ -65,8 +66,8 @@ export default function Equipo (props) {
 
         <div className="col-xs-12">
           <div className="mx-2">
-            <img src="https://thispersondoesnotexist.com/image"
-              className="img-fluid mx-2 my-2" alt="..." style={{ maxWidth: '95vw' }} />
+            <img src={gordo}
+              className="img-fluid mx-2 my-2" alt="daniel" style={{ maxWidth: '95vw' }} />
             <h6 className="subtitulos mt-4">Sub titulo</h6>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et placeat veritatis tempora
             quisquam consequuntur! Ab officia exercitationem,

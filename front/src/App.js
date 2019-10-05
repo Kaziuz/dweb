@@ -58,6 +58,7 @@ function App () {
 
   return (
     <div ref={refBody}>
+      <p style={{position: 'fixed' }}>{scrollinY}</p>
       <NavBar posScrollY={scrollinY} />
 
       <Container

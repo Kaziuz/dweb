@@ -1,61 +1,34 @@
 import React, { Fragment } from 'react'
-import { IoLogoFacebook, IoIosPerson } from 'react-icons/io'
-import gordo from '../img/equipo/gordo.jpg'
-import alex from '../img/equipo/alex.jpg'
+import { IoIosPerson } from 'react-icons/io'
+import equipo_dweb from '../img/equipo/equipo_dweb.jpg'
 
-export default function Equipo (props) {
-  const { integrante1, integrante2, titulo, descripcion } = props.data  
-  // variables para animation
-  const hideDesktop = 'd-none'
-  const showDesktop = 'd-block'
-  const showHideTitleProyectos =  props.scrollY < 893 ? hideDesktop : showDesktop
-  const addanimaaddAnimationTitleEquipo = props.scrollY >= 893 ? 'animated slideInUp slow' : ''
-
-  const showHidedescription =  props.scrollY < 1027 ? hideDesktop : showDesktop
-  const addanimaaddAnimationdescription = props.scrollY >= 1027 ? 'animated fadeIn delay-1s slow' : ''
-
-  const showpersons =  props.scrollY < 1178 ? hideDesktop : showDesktop
-  const addanimationTeam = props.scrollY >= 1178 ? 'animated fadeIn slow' : ''
-
-  const showNamesTeam = props.scrollY < 1451 ? hideDesktop : showDesktop
-  const addanimaNameTeam = props.scrollY >= 1451 ? 'animated fadeInUp' : ''
-  
-  const showDescriptionTeam = props.scrollY < 1500 ? hideDesktop : showDesktop
-  const addanimaNameDescripTeam = props.scrollY >= 1500 ? 'animated fadeInLeft' : ''
-  
-  const showRedesTeam = props.scrollY < 1730 ? hideDesktop : showDesktop
-  const addanimationRedesTeam = props.scrollY >= 1730 ? 'animated rotateIn' : ''
-
+export default function Equipo(props) {
+  const { integrante1, integrante2, titulo, descripcion } = props.data
   return (
     <Fragment>
       <div className="col-lg-12 mt-4">
-        <h2 className={`${showHideTitleProyectos} titulos-pricipales text-left my-4 ${addanimaaddAnimationTitleEquipo}`}>{titulo}</h2>
-        <h6 className={`${showHidedescription} subtitulos mt-4 ${addanimaaddAnimationdescription}`}>{descripcion}</h6>
+        <h2 className={`titulos-pricipales text-left my-4`}>{titulo}</h2>
+        <h6 className={`subtitulos mt-4 s`}>{descripcion}</h6>
       </div>
 
       {/* por default */}
       <div className="d-none d-sm-block">
+        <img src={equipo_dweb} className={`d-block mx-auto img-fluid my-4`} alt="equipo dweb" />
+      </div>
+      <div className="d-none d-sm-block">
         <div className="col-lg-12 d-flex justify-content-between mt-2">
-
           <div className="mx-2">
-            <img src={gordo}
-              className={`${showpersons} img-fluid ${addanimationTeam}`} alt={integrante2.nombre} style={{ maxWidth: '35vw' }} />
-            <h6 className={`${showNamesTeam} ${addanimaNameTeam} subtitulos mt-4`}>{integrante2.nombre}</h6>
-            <p className={`${showDescriptionTeam} ${addanimaNameDescripTeam}`}>{integrante2.descripcion}</p>
+            <h6 className={`subtitulos mt-4`}>{integrante2.nombre}</h6>
+            <p>{integrante2.descripcion}</p>
             <div className="d-flex justify-content-start">
-              <a href="http://www.facebook.com"><IoLogoFacebook className={`${showRedesTeam} ${addanimationRedesTeam} redes-icon`} size="3em"/></a>
-              <a href="http://danielarango.cleverapps.io/"><IoIosPerson className={`${showRedesTeam} ${addanimationRedesTeam} redes-icon ml-2`} size="3em"/></a>
+              <a href="http://danielarango.cleverapps.io/"><IoIosPerson className={`redes-icon ml-2`} size="3em" /></a>
             </div>
           </div>
-
           <div className="mx-2">
-            <img src={alex}
-              className={`${showpersons} img-fluid ${addanimationTeam} delay-1s`} alt={integrante1.nombre} style={{ maxWidth: '35vw' }} />
-            <h6 className={`${showNamesTeam} ${addanimaNameTeam} subtitulos mt-4`}>{integrante1.nombre}</h6>
-            <p className={`${showDescriptionTeam} ${addanimaNameDescripTeam}`}>{integrante1.descripcion}</p>
-            <div className="d-flex justify-content-start">
-              <a href="http://www.facebook.com"><IoLogoFacebook className={`${showRedesTeam} ${addanimationRedesTeam} redes-icon`} size="3em"/></a>
-              <a href="http://www.facebook.com"><IoIosPerson className={`${showRedesTeam} ${addanimationRedesTeam} redes-icon ml-2`} size="3em"/></a>
+            <h6 className={`subtitulos mt-4 text-right`}>{integrante1.nombre}</h6>
+            <p className="text-right">{integrante1.descripcion}</p>
+            <div className="d-flex justify-content-end">
+              <a href="https://mi-sitio-web.johnnysepulveda988.now.sh/"><IoIosPerson className={`redes-icon ml-2`} size="3em" /></a>
             </div>
           </div>
         </div>
@@ -63,36 +36,23 @@ export default function Equipo (props) {
 
       {/* solo en celulares */}
       <div className="d-sm-none d-md-none lg-none d-xl-none">
-
+        <img src={equipo_dweb} className={`d-block mx-auto img-fluid my-4`} alt="equipo dweb" />
         <div className="col-xs-12">
           <div className="mx-2">
-            <img src={gordo}
-              className="img-fluid mx-2 my-2" alt="daniel" style={{ maxWidth: '95vw' }} />
-            <h6 className="subtitulos mt-4">Sub titulo</h6>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et placeat veritatis tempora
-            quisquam consequuntur! Ab officia exercitationem,
-           doloribus non dolor cumque laboriosam, quibusdam consectetur odio explicabo, obcaecati a officiis aperiam?
-            </p>
+            <h6 className={`subtitulos mt-4`}>{integrante2.nombre}</h6>
+            <p>{integrante2.descripcion}</p>
             <div className="d-flex justify-content-start">
-              <a href="http://www.facebook.com"><IoLogoFacebook className="redes-icon" size="3em"/></a>
-              <a href="http://www.twitter.com"><IoIosPerson className="redes-icon ml-2" size="3em"/></a>
+              <a href="http://danielarango.cleverapps.io/"><IoIosPerson className={`redes-icon ml-2`} size="3em" /></a>
             </div>
           </div>
 
           <div className="mx-2">
-            <img src="https://thispersondoesnotexist.com/image"
-              className="img-fluid mx-2 my-2" alt="..." style={{ maxWidth: '95vw' }} />
-            <h6 className="subtitulos mt-4">Sub titulo</h6>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et placeat veritatis tempora
-            quisquam consequuntur! Ab officia exercitationem,
-           doloribus non dolor cumque laboriosam, quibusdam consectetur odio explicabo, obcaecati a officiis aperiam?
-            </p>
-            <div className="d-flex justify-content-start">
-              <a href="http://www.facebook.com"><IoLogoFacebook className="redes-icon" size="3em"/></a>
-              <a href="http://www.facebook.com"><IoIosPerson className="redes-icon ml-2" size="3em"/></a>
+            <h6 className={`subtitulos mt-4 text-right`}>{integrante1.nombre}</h6>
+            <p className="text-right">{integrante1.descripcion}</p>
+            <div className="d-flex justify-content-end">
+              <a href="https://mi-sitio-web.johnnysepulveda988.now.sh/"><IoIosPerson className={`redes-icon ml-2`} size="3em" /></a>
             </div>
           </div>
-
         </div>
       </div>
     </Fragment>

@@ -20,9 +20,7 @@ function App () {
     tabletopInit()
   }, [])
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-  })
+  useEffect(() => { window.addEventListener('scroll', handleScroll) })
 
   function handleScroll () {
     const scrolly = window.scrollY
@@ -50,38 +48,31 @@ function App () {
   const addmarginTop = window.innerWidth <= 500 ? 70 : 140
 
   // animations variables
-  const hide = 'd-none'
-  const show = 'd-block'
-  // console.log('posY', scrollinY)
-  const showHideTitleProyectos = scrollinY < 420 ? hide : show
-  const addAnimationTitleProyectos = scrollinY >= 420 ? 'animated slideInUp slow' : ''
+
 
   return (
     <div ref={refBody}>
-      <p style={{position: 'fixed' }}>{scrollinY}</p>
       <NavBar posScrollY={scrollinY} />
 
-      <Container
-        style={{ background: 'rgba(219, 220, 222, 1)',
-          marginTop: addmarginTop }}>
+      <Container style={{ background: 'transparent', marginTop: addmarginTop }}>
         <Row>
-          <Bienvenida data={data.seccion1} scrollY={scrollinY}/>
+          <Bienvenida data={data.seccion1} />
         </Row>
 
         <Row>
           <div className="col-lg-12 mt-4">
-            <h2 className={`${showHideTitleProyectos} titulos-pricipales text-left my-4 ${addAnimationTitleProyectos}`}>Proyectos</h2>
-            <Galeria google={googleSheet} scrollY={scrollinY} />
+            <h2 className={`titulos-pricipales text-left my-4`}>Proyectos</h2>
+            <Galeria google={googleSheet} />
           </div>
         </Row>
 
         <Row>
           {/* <a name="equipo"></a> NO BORRAR */}
-          <Equipo data={data.seccion3} scrollY={scrollinY} />
+          <Equipo data={data.seccion3} />
         </Row>
 
         <Row>
-          <Contacto data={data.seccion4} scrollY={scrollinY} />
+          <Contacto data={data.seccion4} />
         </Row>
 
       </Container>

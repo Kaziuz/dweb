@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 
 // import { IoIosMenu } from 'react-icons/io'
-import dwebblack from './img/dwebblack.png'
+import dwebblack from './img/dwebwhite.png'
 
 function NavBar ({ posScrollY }) {
   const refLogo = useRef()
@@ -13,8 +13,8 @@ function NavBar ({ posScrollY }) {
     // const element =  refLogo &&
     //   refLogo.current.classList.add('animated', 'bounceOutLeft')
     if (posScrollY >= 10) {
-      refNavbar.current.style.boxShadow = '0 1px 3px rgba(0,0,0,.11)'
-      refNavbar.current.style.background = '#dbdcde'
+      refNavbar.current.style.boxShadow = 'rgba(0, 0, 0, 0.5) 0px 4px 0px'
+      refNavbar.current.style.background = '#1d1c24'
       refNavbar.current.style.height = '52px'
       refLogo.current.style.width = '36px'
       refLogo.current.style.top = '0px'
@@ -35,12 +35,11 @@ function NavBar ({ posScrollY }) {
       <div className="d-none d-sm-block">
         <nav ref={refNavbar}
           className="navbar fixed-top custom-nav d-flex justify-content-center">
-          <a className="navbar-brand" href="#">
             <div className="mr-3 logo animated flipInX slow"
               style={{ background: `url(${dwebblack}) no-repeat top left`,
                 backgroundSize: 'contain',
-              }} ref={refLogo}></div>
-          </a>
+              }} ref={refLogo}>
+            </div>
           {/* <div className="navbar-top" ref={refHamburguer}><IoIosMenu size="1.6em"/></div> NO BORRAR */}
         </nav>
       </div>
@@ -49,12 +48,11 @@ function NavBar ({ posScrollY }) {
       <div className="d-block d-sm-none">
         <nav
           className="navbar fixed-top root-color shadow custom-nav d-flex justify-content-center">
-          <a className="navbar-brand" href="#">
             <div className="mr-3 logo-celular animated flipInX slow"
               style={{ background: `url(${dwebblack}) no-repeat top left`,
                 backgroundSize: 'contain',
-              }}></div>
-          </a>
+              }}>  
+            </div>
           {/* <div className="navbar-top"><IoIosMenu size="1.6em"/></div> NO BORRAR */}
         </nav>
       </div>

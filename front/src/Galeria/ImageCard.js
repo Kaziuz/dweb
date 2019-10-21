@@ -6,6 +6,8 @@ function ImageCard (props) {
   const [widthImage, setWidthImage] = useState(0)
   const imageRef = useRef()
 
+  const { imagen: { cliente, img, urlproyecto } } = props
+
   useEffect(() => {
     imageRef.current.addEventListener('load', setSpans())
   })
@@ -24,16 +26,13 @@ function ImageCard (props) {
         style={{ width: `${widthImage}px` }}>
         <img
           ref={imageRef}
-          alt={props.imagen.cliente}
-          src={props.imagen.img}
-          className={`img-galery ${props.showHideProyectos} ${props.animation}`}
+          alt={cliente}
+          src={img}
+          className={`img-galery`}
         />
         <div className="more-info">
-          {/*
-          <h6 className="text-warning font-weight-bold text-center"
-          style={{ lineHeight: 6, fontSize: 22 }}>{props.imagen.proyecto}</h6> */}
           {/* eslint-disable-next-line react/jsx-no-target-blank */}
-          <a href={props.imagen.urlproyecto} target="_blank">Link hacia la web</a>
+          <a href={urlproyecto} target="_blank">Link hacia la web</a>
         </div>
       </div>
     </div>

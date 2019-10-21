@@ -22,14 +22,12 @@ function Contacto (props) {
   const hideinputEmail = scrollY < 2035 ? hideDesktop : showDesktop
   const hideinputAsunto = scrollY < 2056 ? hideDesktop : showDesktop
   const hideinputMensaje = scrollY <  2120 ? hideDesktop : showDesktop
-  const hideinfoComplement = scrollY < 2159 ? hideDesktop : showDesktop
   const hideshowButton = scrollY < 2194 ? hideDesktop : showDesktop
 
   function isValidEmail (mail) {
     // eslint-disable-next-line no-useless-escape
     return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail)
   }
-  console.log('scrollY', props.scrollY)
 
   const sendEmail = e => {
     e.preventDefault()
@@ -69,7 +67,7 @@ function Contacto (props) {
         <h2 className={`${hidetitle} titulos-pricipales text-left`}>{props.data.titulo}</h2>
         <p className={`${hideDescription} text-left w-responsive mx-auto mb-5`}>{props.data.descripcion}</p>
         <div className="row">
-          <div className="col-md-9 mb-md-0 mb-5">
+          <div className="col-md-12 mb-md-0 mb-5">
             <form id="contact-form" name="contact-form" onSubmit={sendEmail}>
               <div className="row">
 
@@ -143,20 +141,6 @@ function Contacto (props) {
               </div>
             </form>
             <div className="status"></div>
-          </div>
-
-          <div className="col-md-3 text-center">
-            <ul className={`${hideinfoComplement} hideinfoComplementlist-unstyled mb-0`}>
-              <li><i className="fas fa-map-marker-alt fa-2x"></i>
-                <p>Medellín, Antioquia - Colombia</p>
-              </li>
-              <li><i className="fas fa-phone mt-4 fa-2x"></i>
-                <p>+ 300 218 56 57</p>
-              </li>
-              <li><i className="fas fa-envelope mt-4 fa-2x"></i>
-                <p>info@deweb.com</p>
-              </li>
-            </ul>
           </div>
 
         </div>

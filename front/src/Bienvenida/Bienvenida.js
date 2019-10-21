@@ -12,42 +12,41 @@ function Bienvenida (props) {
   function drawIcon (image) {
     if (image.includes('Wordpress')) {
       return <div className={`servicios-icons`}
-        style={{ background: `url(${wordpress}) no-repeat top left`, backgroundSize: 'contain' }}></div>
+        style={{ background: `url(${wordpress}) no-repeat top left`, backgroundSize: 'contain', filter: 'invert(1)' }}></div>
     } else if (image.includes('UX')) {
       return <div className={`servicios-icons`}
-        style={{ background: `url(${ux}) no-repeat top left`, backgroundSize: 'contain' }}></div>
+        style={{ background: `url(${ux}) no-repeat top left`, backgroundSize: 'contain', filter: 'invert(1)' }}></div>
     } else if (image.includes('Ecommerce')) {
       return <div className={`servicios-icons`}
-        style={{ background: `url(${ecommerce}) no-repeat top left`, backgroundSize: 'contain' }}></div>
+        style={{ background: `url(${ecommerce}) no-repeat top left`, backgroundSize: 'contain', filter: 'invert(1)' }}></div>
     } else {
       return <div className={`servicios-icons`}
-        style={{ background: `url(${aplicaciones}) no-repeat top left`, backgroundSize: 'contain' }}></div>
+        style={{ background: `url(${aplicaciones}) no-repeat top left`, backgroundSize: 'contain', filter: 'invert(1)' }}></div>
     }
   }
 
   const hideDesktop = 'none'
   const showDesktop = 'inline-grid'
   const showHideProyectos =  props.scrollY <= 255 ? hideDesktop : showDesktop
-  const addanimations = props.scrollY > 250 ? 'animated zoomIn' : 'animated zoomOut'
 
   return (
     <Fragment>
       <div className="col-lg-12">
-        <h2 className="text-left titulos-pricipales text-center animated bounceIn delay-1s slow">{titulo}</h2>
-        <p className="mt-4 animated bounceInLeft delay-2s slow">{descripcion}</p>
+        <h2 className="text-left titulos-pricipales text-center">{titulo}</h2>
+        <p className="mt-4">{descripcion}</p>
       </div>
 
-      <div className="col-sm-4 mt-4 animated fadeIn delay-1s slow">
+      <div className="col-sm-4 mt-4">
         <h5 className="subtitulos text-left">{servicio1.titulo}</h5>
         <p>{servicio1.descripcion}</p>
       </div>
 
-      <div className="col-sm-4 mt-4 animated fadeIn delay-2s slow">
+      <div className="col-sm-4 mt-4">
         <h5 className="subtitulos text-left">{servicio2.titulo}</h5>
         <p>{servicio2.descripcion}</p>
       </div>
 
-      <div className="col-sm-4 mt-4 animated fadeIn delay-3s slow">
+      <div className="col-sm-4 mt-4">
         <h5 className="subtitulos text-left">{servicio3.titulo}</h5>
         <ul className="">
           { servicio3.descripcion.map((o, idx) => {
@@ -59,8 +58,7 @@ function Bienvenida (props) {
       <div className="d-none d-sm-flex col-lg-12 justify-content-between">
         { servicios.map((servicio, idx) => {
           return (
-            <div key={`${idx}-${servicio.titulo}`} style={{ display: `${showHideProyectos}` }}
-              className={`${addanimations} delay-${idx}s faster`}>
+            <div key={`${idx}-${servicio.titulo}`} style={{ display: `${showHideProyectos}` }}>
               {drawIcon(servicio)}
               <span className="p-2 text-center text-uppercase font-weight-bold">
                 {servicio}
@@ -73,7 +71,7 @@ function Bienvenida (props) {
       <div className="d-sm-none col-sm-12">
         { servicios.map((servicio, idx) => {
           return (
-            <div key={`${idx}-moviles`} className={`d-flex align-items-center ${addanimations} delay-${idx}s faster`}>
+            <div key={`${idx}-moviles`} className={`d-flex align-items-center`}>
               {drawIcon(servicio)}
               <span className="p-2 text-right text-uppercase font-weight-bold">
                 {servicio}

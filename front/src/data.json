@@ -1,7 +1,7 @@
 {
   "seccion1": {
     "titulo": "¿Quienes Somos?",
-    "descripcion": "Somos una empresa joven, curiosos de la web, el diseño y las nuevas tecnologías, aprender es nuestro día a día aplicando nuevas técnicas de desarrollo y actualizando nuestro core constantemente, siempre  creando sistemas que ponemos a prueba para aplicar lo aprendido.",
+    "descripcion": "Somos una empresa joven, curiosos de la web, el diseño y las nuevas tecnologías, aprender es nuestro día a día. Constantemente estamos aplicando nuevas técnicas de desarrollo para desplegar sistemas que ponemos a prueba para así, aplicar lo aprendido",
     "subtitulo" : "Nuestros servicios",
     "servicio1": {
       "titulo" : "Desarrollo web y app",
@@ -23,7 +23,7 @@
       "Ecommerce",
       "Wordpress",
       "UX",
-      "Aplicaciones"
+      "App móvil y web"
     ]
   },
   "seccion2": {
@@ -32,7 +32,7 @@
   },
   "seccion3": {
     "titulo": "Equipo",
-    "descripcion": "Estamos en constante aprendizaje, el desarrollo de interfaces, los sitios web y las aplicaciones web son nuestro interes",
+    "descripcion": "Nuestro equipo esta conformador por dos cacharreros de la web, el desarrollo de interfaces, los sitios web y las aplicaciones web son nuestro enfoque",
     "integrante1": {
       "nombre": "Johnny Sepúlveda",
       "descripcion" : "Me gustan los trakers y las consolas de videojuegos para hacer música. En mi ratos libres salir a caminar en los bosques, compartir con la naturaleza y los animales me recarga y me llena de energía." 
@@ -44,6 +44,6 @@
   },
   "seccion4": {
     "titulo": "Contacto",
-    "descripcion": "Usted tiene alguna idea, tienda web o proyecto que quiere construir? Por favor sientase en la libertad de escribirnos y exponernos su idea. En la brevedad estaremos en contacto con usted"
+    "descripcion": "¿Tiene usted alguna idea, tienda web o proyecto web que quiere construir ? Por favor sientase en la libertad de escribirnos y exponernos su idea. En la brevedad estaremos en contacto con usted"
   }
 }

@@ -48,8 +48,6 @@ function App () {
   const addmarginTop = window.innerWidth <= 500 ? 70 : 140
 
   // animations variables
-
-
   return (
     <div ref={refBody}>
       <NavBar posScrollY={scrollinY} />

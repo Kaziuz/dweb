@@ -19,7 +19,7 @@ function ImageCard (props) {
     setEspacios(espacios)
     setWidthImage(widthImageDOM)
   }
-
+  
   return (
     <div style={{ gridRowEnd: `span ${espacios}` }}>
       <div className="wrap-img-gallery"

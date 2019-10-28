@@ -42,7 +42,8 @@ function Contacto (props) {
       }
       axios({
         method: 'POST',
-        url: 'http://localhost:3032/send', // local
+        // url: 'http://localhost:3032/send', // local
+        url: 'https://dweb-backend.herokuapp.com/send',
         data: datos,
       }).then(response => {
         console.log('response server', response)

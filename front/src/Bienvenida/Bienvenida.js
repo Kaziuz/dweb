@@ -50,7 +50,7 @@ function Bienvenida (props) {
         <h5 className="subtitulos text-left">{servicio3.titulo}</h5>
         <ul className="">
           { servicio3.descripcion.map((o, idx) => {
-            return <li key={idx}>{o}</li>
+            return <li key={idx}> {o}</li>
           }) }
         </ul>
       </div>

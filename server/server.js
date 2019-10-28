@@ -32,8 +32,8 @@ server.use(restify.plugins.fullResponse())
 const smtpTransport = nodemailer.createTransport({
   service: 'Gmail',
   auth: {
-    user: config.USER,
-    pass: config.PASS,
+    user: 'infodwebapps@gmail.com',
+    pass: 'admin2019@_',
   }
 })
 

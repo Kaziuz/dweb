@@ -42,12 +42,12 @@ function Contacto (props) {
       }
       axios({
         method: 'POST',
-        // url: 'http://localhost:3032/send', // local
-        url: 'https://dweb-backend.herokuapp.com/send',
+        url: 'https://formspree.io/maywpoay',
         data: datos,
+        dataType: 'json'
       }).then(response => {
         console.log('response server', response)
-        if (response.status === 201) {
+        if (response.status === 200) {
           setEmail('')
           setNombreUsuario('Tu nombre')
           setAsunto('Asunto')

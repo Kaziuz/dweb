@@ -21,7 +21,7 @@ export default function Equipo(props) {
             <h6 className={`subtitulos mt-4`}>{integrante2.nombre}</h6>
             <p>{integrante2.descripcion}</p>
             <div className="d-flex justify-content-start">
-              <a href="http://danielarango.cleverapps.io/"><IoIosPerson className={`redes-icon ml-2`} size="3em" /></a>
+              <a href="https://danielvillegas.cloudaccess.host"><IoIosPerson className={`redes-icon ml-2`} size="3em" /></a>
             </div>
           </div>
           <div className="mx-2">
@@ -42,7 +42,7 @@ export default function Equipo(props) {
             <h6 className={`subtitulos mt-4`}>{integrante2.nombre}</h6>
             <p>{integrante2.descripcion}</p>
             <div className="d-flex justify-content-start">
-              <a href="http://danielarango.cleverapps.io/"><IoIosPerson className={`redes-icon ml-2`} size="3em" /></a>
+              <a href="https://danielvillegas.cloudaccess.host"><IoIosPerson className={`redes-icon ml-2`} size="3em" /></a>
             </div>
           </div>
 
